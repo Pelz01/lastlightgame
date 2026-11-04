@@ -57,15 +57,26 @@ export class NearGame {
  async recoverRedirect(){const hashes=new URL(location.href).searchParams.get('transactionHashes');if(!hashes)return null;const operation=JSON.parse(sessionStorage.getItem('last-light-near-operation')||'null');if(!operation||operation.contract!==this.config.contractId||operation.account!==this.accountId)throw Error('Connect the wallet that signed the pending transaction to recover it.');const hash=hashes.split(',')[0],result=await this.verify(hash);const action=result.transaction.actions?.find(a=>a.FunctionCall)?.FunctionCall;if(action?.method_name!==operation.method)throw Error('Returned transaction does not match the pending game action.');this.record(operation.method,operation.args,hash);sessionStorage.removeItem('last-light-near-operation');const url=new URL(location.href);url.searchParams.delete('transactionHashes');history.replaceState(null,'',url);return {method:operation.method,value:decodeResult(result),matchId:operation.args.match_id};}
  async create(identity){const id=await this.call('create_match',{identity},'500000000000000000000000');await this.watch(id);return id;}
  async join(id,identity){await this.call('join_match',{match_id:id,identity});await this.watch(id);}
- async watch(id){this.stop();this.closed=false;this.matchId=id;this.signature='';this.autoSettleRound=null;const url=new URL(location.href);url.searchParams.set('near',id);url.searchParams.delete('room');history.replaceState(null,'',url);await this.poll();this.timer=setInterval(()=>this.poll().catch(e=>this.onError?.(e)),1200);}
+ async watch(id){this.stop();this.closed=false;this.matchId=id;this.signature='';this.autoSettleRound=null;this.receiptsRound=-1;const url=new URL(location.href);url.searchParams.set('near',id);url.searchParams.delete('room');history.replaceState(null,'',url);await this.poll();this.timer=setInterval(()=>this.poll().catch(e=>this.onError?.(e)),1200);}
  async poll(){
   if(this.polling||this.closed)return;this.polling=true;
-  try{const state=await view('get_match',{match_id:this.matchId},this.config);if(this.closed)return;this.state=state;
+  try{const state=await view('get_match',{match_id:this.matchId},this.config);if(this.closed)return;this.state=state;if(state.game.settledRound>(this.receiptsRound??-1)&&!this.npcRecoveryBusy&&Date.now()-(this.receiptChecked||0)>3000){this.receiptChecked=Date.now();this.recoverNpcReceipts().catch(()=>{});}
+   if(state.started&&state.game.status==='playing'&&!state.pending.NPC&&Date.now()-(this.npcChecked||0)>3000){this.npcChecked=Date.now();this.tickNPC().catch(()=>{});}
+
    const signature=JSON.stringify([state.game,state.pending,state.players,state.deadline]);if(signature!==this.signature){this.signature=signature;this.onState?.(state);}this.onHealthy?.();
    // A restricted key never opens a wallet popup. Either player may settle; duplicates are harmless.
    if(state.started&&state.game.status==='playing'&&state.deadline!==null&&state.serverNow>=state.deadline&&this.session()&&!this.busy&&this.autoSettleRound!==state.game.round){this.autoSettleRound=state.game.round;await this.call('settle_round',{match_id:this.matchId,round:state.game.round});}
   }finally{this.polling=false;}
  }
+ async rememberNpcReceipt(hash,round,account,matchId){
+  if(account!==this.state?.npc_wallet||this.txs.some(tx=>tx.hash===hash))return;
+  const final=await rpc('tx',{tx_hash:hash,sender_account_id:account,wait_until:'FINAL'},this.config);const call=final.transaction?.actions?.[0]?.FunctionCall;
+  if(final.transaction?.signer_id!==account||final.transaction.receiver_id!==this.config.contractId||!('SuccessValue' in(final.status||{}))||call?.method_name!=='submit_order')return;
+  const args=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(call.args),c=>c.charCodeAt(0))));if(args.match_id!==matchId||args.round!==round||this.txs.some(tx=>tx.hash===hash))return;
+  this.txs.push({method:'submit_order',actor:'NPC',match_id:matchId,round,hash,account,contract:this.config.contractId,network:'testnet'});try{localStorage.setItem('last-light-near-txs',JSON.stringify(this.txs.slice(-100)));}catch{}
+ }
+ async recoverNpcReceipts(){this.npcRecoveryBusy=true;const id=this.matchId,settled=this.state?.game.settledRound;try{const response=await fetch('/api/npc/receipts?match_id='+encodeURIComponent(id));if(!response.ok)return;const data=await response.json();if(data.contract!==this.config.contractId||data.account!==this.state?.npc_wallet)return;await Promise.allSettled(data.receipts.map(r=>this.rememberNpcReceipt(r.tx_hash,r.round,data.account,id)));if(this.matchId===id&&data.receipts.every(r=>this.txs.some(tx=>tx.hash===r.tx_hash)))this.receiptsRound=settled;}finally{this.npcRecoveryBusy=false;}}
+ async tickNPC(){try{const id=this.matchId,response=await fetch('/api/npc/tick',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({match_id:id}),signal:AbortSignal.timeout(25000)});if(!response.ok)return;const result=await response.json();if(result.hash&&result.account)await this.rememberNpcReceipt(result.hash,result.round,result.account,id);}catch{}}
  async ready(){return this.call('ready_match',{match_id:this.matchId});}
  async submit(round,order){const value=await this.call('submit_order',{match_id:this.matchId,round,order});await this.poll();return value;}
  async settle(round){const value=await this.call('settle_round',{match_id:this.matchId,round});await this.poll();return value;}

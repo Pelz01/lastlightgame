@@ -1,6 +1,6 @@
 {
-  "version": "0.2",
-  "status": "Implemented testnet baseline; human enjoyment and strategic balance remain unproven",
+  "version": "0.3",
+  "status": "Implemented testnet merchant market and separate NPC wallet; human enjoyment and strategic balance remain unproven",
   "questions": [
     {
       "id": 1,
@@ -156,13 +156,13 @@
       "id": 26,
       "group": "Competition & NPC",
       "q": "What does the NPC optimize?",
-      "a": "The implemented deterministic policy returns to the depot after selling, carries existing cargo to its district, buys available oxygen when colony oxygen is low, otherwise buys medicine when the clinic is empty. It accounts for publicly included oxygen loads. Read game/rules.js chooseNPC and contracts/last-light/src/model.rs npc for exact quantities and ordering. It is a rule-based NPC, not an LLM or an independent signing wallet."
+      "a": "Tess follows a deterministic stock and demand policy. She may buy merchant lots when projected resale less price and travel leaves at least two credits of margin, post her own asks when supplies are stable, or deliver unsold cargo. She uses her own NEAR wallet through a hosted restricted signer. Read game/market.js and docs/economy-v0.3.md for exact rules. She is not an LLM agent."
     },
     {
       "id": 27,
       "group": "Competition & NPC",
       "q": "Does the NPC have the same information and action limits?",
-      "a": "The NPC uses the same cargo, fuel, travel, trade, storage and priority rules as humans. Its deterministic order is computed inside settlement from the current state and public included orders. Full-state Rust/JS comparisons and deployed-WASM tests verify the baseline; optional merchant resale is not implemented."
+      "a": "Tess uses the same cargo, fuel, trade, storage and priority rules as humans. The hosted runner reads public state and included orders and signs her move before cutoff. Her first included order is fixed; if none arrives she waits. The contract does not synthesize a policy decision during settlement."
     },
     {
       "id": 28,
@@ -222,7 +222,7 @@
       "id": 37,
       "group": "Tests, not claims",
       "q": "Does always buying oxygen beat balanced trading?",
-      "a": "Unknown. Compare identical starting conditions and opponent policies with early oxygen delivery versus withholding, and—only if the optional depot market clears in testing—merchant resale. Log when stock, quotes, owners, profit and survival diverge. Run round-by-round seeded simulations of oxygen-only, medicine-preparation, fuel-plant and mixed strategies, including movement, depot timing, competition and treasury. Report whole-match outcomes, not isolated margins."
+      "a": "Unknown. Compare identical starting conditions and opponent policies with early oxygen delivery versus withholding, and—using the implemented depot merchant market—merchant resale. Log when stock, quotes, owners, profit and survival diverge. Run round-by-round seeded simulations of oxygen-only, medicine-preparation, fuel-plant and mixed strategies, including movement, depot timing, competition and treasury. Report whole-match outcomes, not isolated margins."
     },
     {
       "id": 38,

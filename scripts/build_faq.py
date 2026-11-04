@@ -20,7 +20,7 @@ md = [
     "",
     f"**Version {data['version']}.** {data['status']}. This file and the website FAQ are generated from `data/faq.json`.",
     "",
-    "The full rules and critical round sequence live in [economy-v0.2.md](economy-v0.2.md).",
+    "The current market rules live in [economy-v0.3.md](economy-v0.3.md); underlying colony rules and the original critical round sequence remain in [economy-v0.2.md](economy-v0.2.md).",
     "",
 ]
 current_group = None

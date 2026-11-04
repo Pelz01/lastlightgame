@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {KeyPair} from '@near-js/crypto';import {decodeSignedTransaction} from '@near-js/transactions';
+import {createNpcAgent,D1NpcJobs} from '../hosted/npc-agent.js';import {sqliteJobs} from '../hosted/sqlite-jobs.js';import {createMatch} from '../game/rules.js';
+test('durable NPC leases serialize the wallet and cannot be stolen before expiry',async()=>{const jobs=new D1NpcJobs(sqliteJobs(':memory:'));assert.equal((await jobs.claim('c','@wallet',0,'a',1000)).lease_token,'a');assert.equal(await jobs.claim('c','@wallet',0,'b',1001),null);await jobs.release('c','@wallet',0,'wrong');assert.equal(await jobs.claim('c','@wallet',0,'b',1001),null);await jobs.release('c','@wallet',0,'a');assert.equal((await jobs.claim('c','@wallet',0,'b',1001)).lease_token,'b');});
+test('hosted agent signs its own policy once across concurrent requests; no client controls the order',async()=>{
+ const original=globalThis.fetch,key=KeyPair.fromRandom('ed25519'),jobs=new D1NpcJobs(sqliteJobs(':memory:'));const state={game:createMatch('000001',{market:true}),npc_wallet:'tess.testnet',pending:{},started:true,deadline:Date.now()+15000,serverNow:Date.now()};let sent=0;
+ globalThis.fetch=async(_,request)=>{const {method,params}=JSON.parse(request.body);let result;
+  if(method==='query'&&params.request_type==='call_function')result={result:[...Buffer.from(JSON.stringify(state))]};
+  else if(method==='query')result={nonce:1,block_hash:'11111111111111111111111111111111'};
+  else if(method==='broadcast_tx_commit'){sent++;const tx=decodeSignedTransaction(Buffer.from(params[0],'base64'));assert.equal(tx.transaction.signerId,'tess.testnet');assert.equal(tx.transaction.receiverId,'game.testnet');const call=tx.transaction.actions[0].functionCall;assert.equal(call.methodName,'submit_order');const args=JSON.parse(Buffer.from(call.args).toString());assert.deepEqual(args.order,{kind:'wait'});assert.equal(args.match_id,'000001');state.pending.NPC=args.order;result={transaction:{hash:'test-hash'},status:{SuccessValue:''}};}
+  else if(method==='tx')result={status:{SuccessValue:''}};else throw Error('Unexpected RPC');return Response.json({result});
+ };
+ try{const config={contractId:'game.testnet',rpcUrl:'https://rpc.example.test',accountId:'tess.testnet',privateKey:key.toString(),jobs};const a=createNpcAgent(config),b=createNpcAgent(config);await Promise.all([a('000001'),b('000001'),a('000001')]);assert.equal(sent,1);assert.equal((await jobs.get('game.testnet','000001',1)).status,'confirmed');await assert.rejects(a('../wallet'),/Invalid/);}finally{globalThis.fetch=original;}
+});

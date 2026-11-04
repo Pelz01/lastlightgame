@@ -4,6 +4,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY server.mjs ./
 COPY game ./game
+COPY hosted ./hosted
 COPY dist/client ./client
 COPY dist/assets ./design/runtime
 ENV HOST=0.0.0.0 PORT=4173

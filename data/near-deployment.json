@@ -1,17 +1,19 @@
 {
-  "accountId": "last-light-323356eb.testnet",
+  "accountId": "last-light-market-a2500d58.testnet",
   "network": "testnet",
   "rpcUrl": "https://test.rpc.fastnear.com",
+  "npcAccountId": "tess.last-light-market-a2500d58.testnet",
   "status": "deployed",
-  "hash": "EvDxWga3JmNTiCgbDDKwNKatat8idjyBVgaKG2whWypG",
-  "wasmSha256": "1bdb651e332c27a6f95c9aa525450328657808d2c0e3c0eaba634f4e6e896adf",
+  "hash": "429GET4fxoznPMuzReefmjW5T869mVAoQWrx7L3myN4n",
+  "wasmSha256": "83de20aac14a81e9470ab1a3271b33f227dbf011b60532e57cf36d093fd22ba2",
   "version": {
     "create_deposit": "500000000000000000000000",
-    "credits": "match-scoped, non-transferable game units",
+    "credits": "match-scoped game units; transfers stay inside the match",
     "max_matches": 100,
     "network": "testnet",
+    "npc_wallet": "tess.last-light-market-a2500d58.testnet",
     "round_ms": 15000,
-    "rules_version": 1,
-    "version": "0.2.0"
+    "rules_version": 2,
+    "version": "0.3.0"
   }
 }

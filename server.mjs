@@ -1,3 +1,5 @@
+import {createNpcAgent,D1NpcJobs} from './hosted/npc-agent.js';
+import {NEAR_CONFIG} from './client/near-config.js';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -10,18 +12,20 @@ import {randomBytes} from 'node:crypto';
 const root=path.dirname(fileURLToPath(import.meta.url));
 const port=Number(process.env.PORT||4173),host=process.env.HOST||'0.0.0.0';
 const nonce=randomBytes(18).toString('base64');
+let npcAgent=null;if(process.env.NEAR_NPC_KEY_FILE){const key=JSON.parse(await fs.readFile(process.env.NEAR_NPC_KEY_FILE,'utf8'));if(key.kind!=='function-call'||key.contract_id!==NEAR_CONFIG.contractId||JSON.stringify(key.allowed_methods)!==JSON.stringify(['submit_order']))throw Error('NPC requires a contract-restricted key');const {sqliteJobs}=await import('./hosted/sqlite-jobs.js');npcAgent=createNpcAgent({contractId:NEAR_CONFIG.contractId,rpcUrl:NEAR_CONFIG.rpcUrl,accountId:key.account_id,privateKey:key.private_key,jobs:new D1NpcJobs(sqliteJobs(process.env.NPC_JOB_STORE||path.join(root,'data/npc-jobs.sqlite')))});}
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain'};
 const assetNames=new Set(['colony-960.webp','colony-1440.webp','districts.webp','resources.webp','merchant-ship.webp','wordmark.svg','mark.svg','barlow-condensed-latin-600.woff2','FONT-LICENSE.txt','audio.mjs','colony-ground-960.webp','colony-ground-1440.webp','buildings-ground.webp','rovers-ground.webp','portraits-ground.webp']);
 const networkUrls=()=>Object.values(networkInterfaces()).flat().filter(a=>a.family==='IPv4'&&!a.internal).map(a=>`http://${a.address}:${port}`);
 const server=http.createServer(async(req,res)=>{
  try{
+  if(req.url==='/api/npc/tick'){res.setHeader('Content-Type','application/json');res.setHeader('Cache-Control','no-store');if(req.method!=='POST'||(req.headers.origin&&new URL(req.headers.origin).host!==req.headers.host)){res.writeHead(403);res.end(JSON.stringify({error:'Invalid request'}));return;}if(!npcAgent){res.writeHead(503);res.end(JSON.stringify({error:'NPC wallet unavailable'}));return;}let body='';for await(const chunk of req){body+=chunk;if(body.length>512){res.writeHead(413);res.end('{}');return;}}try{const message=JSON.parse(body);const result=await npcAgent(message.match_id);res.end(JSON.stringify(result));}catch(error){res.writeHead(503);res.end(JSON.stringify({error:'Tess is temporarily unavailable'}));}return;}
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
   const url=new URL(req.url,'http://localhost');let file;
   if(url.pathname==='/health'){res.writeHead(200,{'Content-Type':'application/json'});res.end('{"ok":true,"settlement":"local"}');return;}
   if(url.pathname==='/connection'){res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({networkUrls:host==='127.0.0.1'?[]:networkUrls(),scope:'same-network',internetHosted:false}));return;}
   if(url.pathname==='/'||url.pathname==='/index.html')file=path.join(root,'client/index.html');
   else if(/^\/client\/[a-z-]+\.(js|css)$/.test(url.pathname))file=path.join(root,url.pathname);
-  else if(/^\/game\/(rules|plans|identity)\.js$/.test(url.pathname))file=path.join(root,url.pathname);
+  else if(/^\/game\/(rules|plans|identity|goods|market|near-rpc)\.js$/.test(url.pathname))file=path.join(root,url.pathname);
   else if(url.pathname.startsWith('/assets/')&&assetNames.has(url.pathname.slice(8)))file=path.join(root,'design/runtime',url.pathname.slice(8));
   else{res.writeHead(404);res.end('Not found');return;}
   let data=await fs.readFile(file);if(path.extname(file)==='.html')data=Buffer.from(data.toString().replace('__WALLET_NONCE__',nonce));res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','Content-Security-Policy':`default-src 'self'; script-src 'self' https: 'nonce-${nonce}'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-src 'self' https: blob:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`});res.end(req.method==='HEAD'?undefined:data);

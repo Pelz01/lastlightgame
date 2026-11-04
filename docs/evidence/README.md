@@ -1,6 +1,10 @@
 # Verification evidence
 
-These reports were generated on November 3, 2026 against the deployed testnet build. They establish integration behavior, not human enjoyment or strategic balance.
+Current v0.3 merchant-market and separate-NPC-wallet results are in [merchant-economy/](merchant-economy/README.md). They include the twenty-round testnet match, wallet signature proof and receipt-recovery checks.
+
+## Historical v0.2 baseline
+
+The reports below were generated on November 3, 2026 against the deployed testnet build. They establish integration behavior, not human enjoyment or strategic balance.
 
 | Report | Evidence |
 | --- | --- |

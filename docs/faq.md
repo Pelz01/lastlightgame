@@ -1,8 +1,8 @@
 # Last Light — economy FAQ
 
-**Version 0.2.** Implemented testnet baseline; human enjoyment and strategic balance remain unproven. This file and the website FAQ are generated from `data/faq.json`.
+**Version 0.3.** Implemented testnet merchant market and separate NPC wallet; human enjoyment and strategic balance remain unproven. This file and the website FAQ are generated from `data/faq.json`.
 
-The full rules and critical round sequence live in [economy-v0.2.md](economy-v0.2.md).
+The current market rules live in [economy-v0.3.md](economy-v0.3.md); underlying colony rules and the original critical round sequence remain in [economy-v0.2.md](economy-v0.2.md).
 
 ## Foundation
 
@@ -114,11 +114,11 @@ They can withhold their own cargo. They cannot drain colony stock by purchasing 
 
 ### 26. What does the NPC optimize?
 
-The implemented deterministic policy returns to the depot after selling, carries existing cargo to its district, buys available oxygen when colony oxygen is low, otherwise buys medicine when the clinic is empty. It accounts for publicly included oxygen loads. Read game/rules.js chooseNPC and contracts/last-light/src/model.rs npc for exact quantities and ordering. It is a rule-based NPC, not an LLM or an independent signing wallet.
+Tess follows a deterministic stock and demand policy. She may buy merchant lots when projected resale less price and travel leaves at least two credits of margin, post her own asks when supplies are stable, or deliver unsold cargo. She uses her own NEAR wallet through a hosted restricted signer. Read game/market.js and docs/economy-v0.3.md for exact rules. She is not an LLM agent.
 
 ### 27. Does the NPC have the same information and action limits?
 
-The NPC uses the same cargo, fuel, travel, trade, storage and priority rules as humans. Its deterministic order is computed inside settlement from the current state and public included orders. Full-state Rust/JS comparisons and deployed-WASM tests verify the baseline; optional merchant resale is not implemented.
+Tess uses the same cargo, fuel, trade, storage and priority rules as humans. The hosted runner reads public state and included orders and signs her move before cutoff. Her first included order is fixed; if none arrives she waits. The contract does not synthesize a policy decision during settlement.
 
 ### 28. Can the NPC go bankrupt?
 
@@ -162,7 +162,7 @@ No guarantee against it. Cargo caps limit how much a rich merchant can hold, and
 
 ### 37. Does always buying oxygen beat balanced trading?
 
-Unknown. Compare identical starting conditions and opponent policies with early oxygen delivery versus withholding, and—only if the optional depot market clears in testing—merchant resale. Log when stock, quotes, owners, profit and survival diverge. Run round-by-round seeded simulations of oxygen-only, medicine-preparation, fuel-plant and mixed strategies, including movement, depot timing, competition and treasury. Report whole-match outcomes, not isolated margins.
+Unknown. Compare identical starting conditions and opponent policies with early oxygen delivery versus withholding, and—using the implemented depot merchant market—merchant resale. Log when stock, quotes, owners, profit and survival diverge. Run round-by-round seeded simulations of oxygen-only, medicine-preparation, fuel-plant and mixed strategies, including movement, depot timing, competition and treasury. Report whole-match outcomes, not isolated margins.
 
 ### 38. Can freeloaders profit while rescuers lose?
 

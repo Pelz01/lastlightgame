@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "contract": "last-light-market-a2500d58.testnet",
+  "matchId": "000005",
+  "status": "survived",
+  "liveHumanBrowsers": 2,
+  "liveRoundStateChecks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "liveReloadRound": 2,
+  "fullStateParity": true,
+  "originalBrowserReceiptAssertion": {
+    "observed": 19,
+    "expected": 20,
+    "fixed": "Hydrate and verify NPC receipts from durable storage after reconnect and settlement"
+  },
+  "freshBrowserRecovery": {
+    "passed": true,
+    "browsers": 2,
+    "npcReceiptsPerBrowser": 20
+  },
+  "npcWallet": "tess.last-light-market-a2500d58.testnet",
+  "npcSignaturesVerified": 20,
+  "scriptErrors": []
+}

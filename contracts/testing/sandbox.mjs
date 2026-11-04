@@ -2,13 +2,16 @@ import {Worker} from 'near-workspaces';import assert from 'node:assert/strict';i
 import {PLANS} from '../../game/plans.js';import {createMatch,settleRound,chooseNPC,normalizeOrder} from '../../game/rules.js';
 const worker=await Worker.init();const root=worker.rootAccount;const checks=[];
 try{
- const a=await root.createSubAccount('aurora'),b=await root.createSubAccount('boreal'),stranger=await root.createSubAccount('outsider');const contract=await root.devDeploy('../last-light/target/wasm32-unknown-unknown/release/last_light.wasm');await contract.call(contract,'new',{});
+ const a=await root.createSubAccount('aurora'),b=await root.createSubAccount('boreal'),stranger=await root.createSubAccount('outsider'),npc=await root.createSubAccount('tess');const contract=await root.devDeploy('../last-light/target/wasm32-unknown-unknown/release/last_light.wasm');await contract.call(contract,'new',{npc_account:npc.accountId});
  const id=await a.call(contract,'create_match',{identity:{name:'Aurora',portrait:'mara'}},{attachedDeposit:'500000000000000000000000'});await b.call(contract,'join_match',{match_id:id,identity:{name:'Boreal',portrait:'ilan'}});await a.call(contract,'ready_match',{match_id:id});await b.call(contract,'ready_match',{match_id:id});
  await assert.rejects(stranger.call(contract,'submit_order',{match_id:id,round:1,order:{kind:'wait'}}),/does not own/);checks.push('wallet cannot control another merchant');
  await assert.rejects(a.call(contract,'settle_round',{match_id:id,round:1}),/still open/);checks.push('early settlement rejected');
- let expected=createMatch(id);expected.identities.A={name:'Aurora',portrait:'mara'};expected.identities.B={name:'Boreal',portrait:'ilan'};
+ let expected=createMatch(id,{market:true});expected.identities.A={name:'Aurora',portrait:'mara'};expected.identities.B={name:'Boreal',portrait:'ilan'};
  for(let r=1;r<=20;r++){
   const orders={A:normalizeOrder(PLANS.A[r]||{kind:'wait'}),B:normalizeOrder(PLANS.B[r]||{kind:'wait'})};
+  if(r===2)orders.A=normalizeOrder({kind:'list',good:'oxygen',amount:3,unit_price:3});if(r===3||r===4)orders.A=normalizeOrder({kind:'wait'});
+  for(const seat of ['A','B'])if(orders[seat].kind==='load')orders[seat].refill=Math.min(orders[seat].refill,2-expected.merchants[seat].tank);orders.NPC=normalizeOrder(chooseNPC(expected,'NPC',orders));await npc.call(contract,'submit_order',{match_id:id,round:r,order:orders.NPC,reason:'Sandbox independent policy signer'});
+  if(r===1){await npc.call(contract,'submit_order',{match_id:id,round:r,order:{kind:'load',good:'oxygen',amount:3,refill:2}});const locked=await contract.view('get_match',{match_id:id});assert.deepEqual(locked.pending.NPC,orders.NPC);}
   if(r===1)await a.call(contract,'submit_order',{match_id:id,round:r,order:{kind:'wait'}});
   await a.call(contract,'submit_order',{match_id:id,round:r,order:orders.A});await b.call(contract,'submit_order',{match_id:id,round:r,order:orders.B});
   const before=await contract.view('get_match',{match_id:id});if(r===1)assert.equal(before.game.merchants.A.cash,25);
@@ -16,11 +19,18 @@ try{
   await worker.provider.fastForward(22);
   if(r===1){await assert.rejects(a.call(contract,'submit_order',{match_id:id,round:r,order:{kind:'wait'}}),/stale or late/);checks.push('late order rejected without carry-over');}
   const actual=await stranger.call(contract,'settle_round',{match_id:id,round:r},{gas:'200000000000000'});
-  orders.NPC=chooseNPC(expected,'NPC',orders);expected=settleRound(expected,orders).state;assert.deepEqual(actual.game,expected,'WASM/JS round '+r);
+  expected=settleRound(expected,orders).state;assert.deepEqual(actual.game,expected,'WASM/JS round '+r);
   const duplicate=await a.call(contract,'settle_round',{match_id:id,round:r});assert.deepEqual(duplicate.game,actual.game,'duplicate settlement changed ownership');
  }
- assert.equal(expected.status,'survived');checks.push('20-round deployed WASM matches all JS states and receipts','replacements charge only final included order','any account can settle after cutoff','duplicate settlement is idempotent','NPC uses the same economy');
+ assert.equal(expected.status,'survived');assert.equal(expected.market.trades[0].buyer,'NPC');assert.equal(expected.market.trades[0].total,9);assert.equal(expected.history[4].receipts.NPC.payout,21);checks.push('separate NPC signs its own immutable order','market purchase funds round-five oxygen rescue');checks.push('20-round deployed WASM matches all JS states and receipts','replacements charge only final included order','any account can settle after cutoff','duplicate settlement is idempotent','NPC uses the same economy');
  await assert.rejects(a.call(contract,'submit_order',{match_id:id,round:20,order:{kind:'wait'}}),/not accepting/);checks.push('terminal ownership frozen');
  const state=await contract.view('get_match',{match_id:id});assert.equal(state.accounts.A,a.accountId);assert.equal(state.accounts.B,b.accountId);checks.push('wallet ownership survives fresh state reads');
+ await assert.rejects(npc.call(contract,'ready_match',{match_id:id}),/Only human/);await assert.rejects(npc.call(contract,'create_match',{identity:{name:'Tess',portrait:'sable'}},{attachedDeposit:'500000000000000000000000'}),/human seat/);
+ const humanMarket=await a.call(contract,'create_match',{identity:{name:'Seller',portrait:'mara'}},{attachedDeposit:'500000000000000000000000'});await b.call(contract,'join_match',{match_id:humanMarket,identity:{name:'Buyer',portrait:'ilan'}});await a.call(contract,'ready_match',{match_id:humanMarket});await b.call(contract,'ready_match',{match_id:humanMarket});
+ for(let round=1;round<=3;round++){
+  const orderA=round===1?{kind:'load',good:'oxygen',amount:3,refill:2}:round===2?{kind:'list',good:'oxygen',amount:3,unit_price:3}:{kind:'wait'};
+  await a.call(contract,'submit_order',{match_id:humanMarket,round,order:orderA});await b.call(contract,'submit_order',{match_id:humanMarket,round,order:round===3?{kind:'buy',seller:'A',offer_version:1,good:'oxygen',amount:3,unit_price:3,refill:2}:{kind:'wait'}});await worker.provider.fastForward(22);await a.call(contract,'settle_round',{match_id:humanMarket,round});
+ }
+ const trade=await contract.view('get_match',{match_id:humanMarket});assert.equal(trade.game.market.trades[0].buyer,'B');assert.equal(trade.game.merchants.A.cash,26);assert.equal(trade.game.merchants.B.cash,14);assert(trade.game.history.every(h=>h.orders.NPC.kind==='wait'));checks.push('actual player-to-player cargo and credit transfer','missing NPC signature becomes WAIT without synthetic policy');
  const report={passed:true,environment:'NEAR sandbox (actual deployed WASM, not mocked contract)',rounds:20,checks};await fs.mkdir('../../qa/near',{recursive:true});await fs.writeFile('../../qa/near/sandbox.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }finally{await worker.tearDown();}

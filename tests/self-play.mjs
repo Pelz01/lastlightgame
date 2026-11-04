@@ -1,7 +1,7 @@
 import {chromium} from 'playwright';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
 await fs.mkdir('qa',{recursive:true});const browser=await chromium.launch({channel:'msedge',headless:true});const context=await browser.newContext({viewport:{width:1366,height:900},reducedMotion:'reduce'}),page=await context.newPage(),errors=[];context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));
 try{
- await page.goto('http://127.0.0.1:4173');await page.click('[data-do=self-test]');await page.locator('.self-test-bar').waitFor();assert(await page.locator('[data-do=settle-both]').isDisabled());
+ await page.goto(process.env.LAST_LIGHT_TEST_ORIGIN||'http://127.0.0.1:4173');await page.click('[data-do=self-test]');await page.locator('.self-test-bar').waitFor();assert(await page.locator('[data-do=settle-both]').isDisabled());
  for(let round=1;round<=20;round++){
   assert.equal((await page.locator('.round-label b').innerText()).trim(),String(round).padStart(2,'0'));
   await page.click('[data-control-seat=A]');await page.click('[data-do=suggest]');await page.click('#confirm');

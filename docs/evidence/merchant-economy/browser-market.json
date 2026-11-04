@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "origin": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+  "humanControlledSeats": 2,
+  "method": "Playwright pass-and-play using the published client",
+  "seller": "A",
+  "buyer": "B",
+  "lot": {
+    "good": "oxygen",
+    "amount": 3,
+    "unit_price": 6,
+    "total": 18
+  },
+  "assertions": [
+    "whole-lot selection displays exact price",
+    "credits and cargo transfer at settlement",
+    "filled offer removed from book",
+    "Confirm visible at 1366x768",
+    "no horizontal overflow at 390x844"
+  ],
+  "scriptErrors": []
+}

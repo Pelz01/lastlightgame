@@ -1,6 +1,6 @@
 # NEAR testnet integration
 
-Public game: [Last Light](https://last-light-colony.faleyeoluwapelumi.chatgpt.site). The contract is `last-light-323356eb.testnet`. This deployment is testnet only. Credits, cargo and scores are non-transferable, match-scoped game units; they are not fungible tokens or redeemable balances.
+Public game: [Last Light](https://last-light-colony.faleyeoluwapelumi.chatgpt.site). The contract is `last-light-market-a2500d58.testnet`. This deployment is testnet only. Credits, cargo and scores are match-scoped game units transferable between merchants only inside the same match; they are not fungible tokens or redeemable balances.
 
 ## Play
 
@@ -14,12 +14,13 @@ Refresh retains `?near=MATCH_CODE`. Connect the same wallet and choose Join / re
 
 ## Contract
 
-Source: `contracts/last-light/src/`. Rust 1.86.0, pinned near-sdk 5.17.2, pinned dependencies in Cargo.lock. The model ports the original rules and fixed NPC policy; the original JS and Python models remain independent comparison references.
+Source: `contracts/last-light/src/`. Rust 1.86.0, pinned near-sdk 5.17.2, pinned dependencies in Cargo.lock. The model ports the original rules, merchant exchange and deterministic NPC comparison policy; the original JS and Python models remain independent comparison references.
 
 - `create_match(identity)` — payable; assigns caller A.
 - `join_match(match_id, identity)` — assigns B or restores the caller's existing seat.
 - `ready_match(match_id)` — requires a seat owner.
-- `submit_order(match_id, round, order)` — requires a seat owner, a current round and inclusion before cutoff; replaces that merchant's pending action.
+- `new(npc_account)` — initializes a fresh contract with a separate designated NPC account.
+- `submit_order(match_id, round, order, reason?)` — requires the corresponding wallet, current round and inclusion before cutoff. Humans may replace pending moves; Tess’s first included move is fixed. Missing NPC orders become wait.
 - `settle_round(match_id, round)` — permissionless after cutoff, atomic and idempotent.
 - `get_match(match_id)`, `list_matches(from_index, limit)`, `version()` — public views.
 - `archive_match(match_id)` — only finished matches; both owners must vote before data is removed. Export evidence first. This is deliberately excluded from game-key permissions.
@@ -50,7 +51,7 @@ npm run build
 
 ## Hosting and local durability
 
-The hosted build is a static client: practice runs in the browser and online matches read/write NEAR directly. It requires neither the local Node server nor a server-held player key. Local WebSocket room controls are omitted from that build because they would require an additional Node host.
+The hosted build is a Worker with embedded static assets and a D1-backed NPC service. Human transactions go directly from their browser/wallet to NEAR. `/api/npc/tick` accepts only a match code and computes Tess’s order server-side; D1 leases serialize her restricted signing key. `/api/npc/receipts` exposes public confirmed hashes. No human full-access key enters the server. Local WebSocket room controls require the optional Node host.
 
 The complete Node build retains local-room play. It stores room state, pending orders, deadlines, identities and hashed seat tokens atomically in `data/rooms.json`. Set `ROOM_STORE` to an absolute persistent-volume path in production. One process owns the file; this is not a multi-instance database. A restart recovers the pending round and settles an expired cutoff once, then opens a fresh window. Corrupt storage fails closed. Disconnected rooms are retained for 24 hours. Losing the original tab's session token cannot be repaired by guessing a code.
 
@@ -63,9 +64,9 @@ The complete Node build retains local-room play. It stores room state, pending o
 - [Access-key permissions](https://docs.near.org/protocol/accounts-contracts/access-keys)
 - [Testnet accounts](https://docs.near.org/getting-started/create-account)
 
-## Verified deployment evidence — November 3, 2026
+## Historical v0.2 evidence — November 3, 2026
 
-The deployed WASM SHA-256 matches the current build artifact. NEAR testnet match `000001` completed twenty rounds through two isolated browser wallets and survived, with every state matching the JS oracle. One browser reloaded and recovered on round 2. The QA wallet signed setup transactions in Node; real browser-held restricted keys submitted gameplay actions. Test-only game keys were revoked afterward. The public desktop and phone builds loaded the real wallet manifest and selector.
+The previous contract `last-light-323356eb.testnet` remains available with its v0.2 state; its metadata is preserved in `data/near-deployment-v0.2.json`. It has no generic migration into the new market state. The recorded v0.2 WASM SHA-256 matched that release artifact. NEAR testnet match `000001` completed twenty rounds through two isolated browser wallets and survived, with every state matching the JS oracle. One browser reloaded and recovered on round 2. The QA wallet signed setup transactions in Node; real browser-held restricted keys submitted gameplay actions. Test-only game keys were revoked afterward. The public desktop and phone builds loaded the real wallet manifest and selector.
 
 - `qa/near/parity.json`: twenty-round model trace and 100 adversarial comparisons.
 - `qa/near/sandbox.json`: actual WASM, twenty rounds and contract authorization/cutoff/idempotence tests.
@@ -74,3 +75,11 @@ The deployed WASM SHA-256 matches the current build artifact. NEAR testnet match
 - `hosting/deployment.json`: public site deployment and version identifiers.
 
 The local suite passes 26 unit tests, twenty-round self-play, two-tab room settlement, the focused live-interaction regression, colony feedback and desktop/mobile landing checks. The complete client is about 1.01 MB uncompressed; the ~297 KB wallet bundle loads only on wallet connection.
+
+## Merchant market and NPC wallet — v0.3
+
+See [economy v0.3](economy-v0.3.md) for exact resale and NPC policy rules. `data/near-deployment.json` identifies the new contract and designated NPC. Run `node scripts/setup-npc-wallet.mjs` after deployment to fund the NPC child account and add a restricted `submit_order` key. All private credentials are written outside this repository. Set production `NPC_ACCOUNT_ID` and secret `NPC_PRIVATE_KEY` through the hosting runtime environment; never embed them in assets or the hosting manifest. A local Node preview can read the same restricted credential through `NEAR_NPC_KEY_FILE`.
+
+Build with `npm run build:site`: `hosting/site/.openai/hosting.json` preserves the existing project identity, declares logical D1 binding `DB`, and omits the old static declaration. Drizzle SQL creates only the NPC lease/receipt table. Human ownership, cash, goods and round results stay on NEAR; D1 is not an alternative game authority.
+
+The current [merchant-economy evidence](evidence/merchant-economy/README.md) records match 000005, all twenty verified NPC signatures and recovery of the complete receipt history in two fresh browsers. Forty-one JS unit tests, 120 adversarial Rust/JS market settlements, the deployed-WASM match, public desktop/mobile controls and Worker lifecycle checks pass. The client is about 1.024 MB uncompressed. The tests caught and fixed Worker request-resource reuse, stale nonces on reconnect, laptop action placement and browser-local receipt gaps.

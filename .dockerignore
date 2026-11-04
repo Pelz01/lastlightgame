@@ -7,3 +7,5 @@ qa
 data
 contracts
 hosting
+
+hosted/assets.generated.js

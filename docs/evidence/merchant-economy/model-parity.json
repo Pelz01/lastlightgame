@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "fullMarketMatchRounds": 20,
+  "adversarialCases": 120,
+  "matching": "complete Rust/JS state, offers, fills, prices, ownership and receipts",
+  "moneyConserved": true
+}

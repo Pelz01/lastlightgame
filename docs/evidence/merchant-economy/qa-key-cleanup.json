@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "testOnlyHumanKeys": [
+    {
+      "account": "aurora.last-light-market-a2500d58.testnet",
+      "revokedGameKeys": 6
+    },
+    {
+      "account": "boreal.last-light-market-a2500d58.testnet",
+      "revokedGameKeys": 6
+    }
+  ],
+  "npcProductionKey": "remains active, restricted to submit_order"
+}

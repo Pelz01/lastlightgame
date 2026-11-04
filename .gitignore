@@ -29,3 +29,8 @@ client/near-wallet.js
 .release-check/
 
 .impeccable.md
+
+hosted/assets.generated.js
+hosting/worker-stage/
+*.sqlite
+*.sqlite-*

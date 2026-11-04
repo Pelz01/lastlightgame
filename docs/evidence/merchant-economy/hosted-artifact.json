@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "origin": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+  "version": "0.3.0",
+  "clientBytes": 1023629,
+  "budgetBytes": 1200000,
+  "publicHashesVerified": [
+    "client/app.js",
+    "client/ground.css",
+    "client/market-ui.js",
+    "client/near-wallet.js",
+    "client/near-chain.js",
+    "client/near-config.js",
+    "game/market.js"
+  ],
+  "receiptRecovery": "verified in two fresh browser sessions"
+}

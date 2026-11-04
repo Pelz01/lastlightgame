@@ -1,10 +1,10 @@
 import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';
 const root=process.cwd(),out=path.join(root,'dist');await fs.mkdir(out,{recursive:true});
 await fs.cp(path.join(root,'client'),path.join(out,'client'),{recursive:true,filter:source=>path.basename(source)!=='scene.js'});await fs.unlink(path.join(out,'client/scene.js')).catch(e=>{if(e.code!=='ENOENT')throw e;});await fs.copyFile(path.join(root,'client/index.html'),path.join(out,'index.html'));await fs.mkdir(path.join(out,'game'),{recursive:true});
-for(const f of ['rules.js','plans.js','identity.js'])await fs.copyFile(path.join(root,'game',f),path.join(out,'game',f));
+for(const f of ['rules.js','plans.js','identity.js','goods.js','market.js','near-rpc.js'])await fs.copyFile(path.join(root,'game',f),path.join(out,'game',f));
 await fs.mkdir(path.join(out,'assets'),{recursive:true});
 const assets=['colony-ground-960.webp','colony-ground-1440.webp','buildings-ground.webp','rovers-ground.webp','portraits-ground.webp','resources.webp','wordmark.svg','mark.svg','barlow-condensed-latin-600.woff2','FONT-LICENSE.txt','audio.mjs'];
 for(const old of ['colony-960.webp','colony-1440.webp','districts.webp','merchant-ship.webp'])await fs.unlink(path.join(out,'assets',old)).catch(e=>{if(e.code!=='ENOENT')throw e;});
 for(const f of assets)await fs.copyFile(path.join(root,'design/runtime',f),path.join(out,'assets',f));
-const manifest={version:'0.2.0',settlement:'practice-local-and-near-testnet',files:{}};for(const p of await fs.readdir(out,{recursive:true})){const f=path.join(out,p);if(!(await fs.stat(f)).isFile()||p==='manifest.json')continue;const data=await fs.readFile(f);manifest.files[p.replaceAll('\\','/')]={bytes:data.length,sha256:createHash('sha256').update(data).digest('hex')};}
+const manifest={version:'0.3.0',settlement:'practice-local-and-near-testnet',files:{}};for(const p of await fs.readdir(out,{recursive:true})){const f=path.join(out,p);if(!(await fs.stat(f)).isFile()||p==='manifest.json')continue;const data=await fs.readFile(f);manifest.files[p.replaceAll('\\','/')]={bytes:data.length,sha256:createHash('sha256').update(data).digest('hex')};}
 const total=Object.values(manifest.files).reduce((n,f)=>n+f.bytes,0);if(total>1200000)throw Error('Client build exceeded 1.2 MB budget');await fs.writeFile(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2));console.log(`Client build: ${total} bytes. Original PNGs, design gallery and build dependencies excluded. Rooms require server.mjs.`);

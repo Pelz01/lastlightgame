@@ -1,21 +1,20 @@
 // Deterministic local rules. Shared by practice and the room authority.
 import {DEFAULT_IDENTITIES} from './identity.js';
+import {GOODS,PRICE,VOLUME,volume} from './goods.js';
+import {createMarket,normalizeMarketOrder,executeMarket,cancelOffer,marketNPCDecision} from './market.js';
+export {GOODS,PRICE,VOLUME,volume};
 export const SEATS=['A','B','NPC'];
-export const GOODS=['oxygen','medicine','fuel'];
-export const PRICE={oxygen:2,medicine:2,fuel:1};
-export const VOLUME={oxygen:2,medicine:1,fuel:1};
 export const RELEASES=[1,4,7,10,13,16];
 export const DEADLINES=[6,12,18];
 export const WAIT=Object.freeze({kind:'wait'});
 export const copy=value=>structuredClone(value);
 export function priority(round){if(!Number.isInteger(round)||round<1||round>20)throw Error('Invalid round');const first=(Math.floor((round-1)/3)+(round-1)%3)%3;return [...SEATS.slice(first),...SEATS.slice(0,first)];}
-export function createMatch(id='practice'){
- return {version:1,id,round:1,settledRound:0,status:'playing',cause:null,identities:copy(DEFAULT_IDENTITIES),
+export function createMatch(id='practice',{market=false}={}){
+ return {version:market?2:1,...market?{market:createMarket()}:{},id,round:1,settledRound:0,status:'playing',cause:null,identities:copy(DEFAULT_IDENTITIES),
  merchants:Object.fromEntries(SEATS.map(seat=>[seat,{cash:25,tank:0,location:'depot',cargo:{oxygen:0,medicine:0,fuel:0}}])),
  depot:{oxygen:3,medicine:4,fuel:24},colony:{oxygen:4,medicine:1,health:2,treasury:180,quota:18,medicine_bought:0,plant_fuel_used:0,critical:false},
  depot_revenue:0,fuel_burned:0,oxygen_consumed:0,medicine_consumed:0,history:[]};
 }
-export const volume=p=>GOODS.reduce((n,g)=>n+p.cargo[g]*VOLUME[g],0);
 export const salvage=p=>p.cargo.oxygen+p.cargo.medicine+Math.floor(p.cargo.fuel/2);
 export const scores=s=>SEATS.map(seat=>({seat,cash:s.merchants[seat].cash,salvage:salvage(s.merchants[seat]),profit:s.merchants[seat].cash+salvage(s.merchants[seat])-25})).sort((a,b)=>b.profit-a.profit);
 export const winners=s=>s.status==='survived'?scores(s).filter(p=>p.profit===scores(s)[0].profit).map(p=>p.seat):[];
@@ -25,7 +24,8 @@ const integer=n=>Number.isSafeInteger(n)&&n>=0&&n<=1000;
 export function normalizeOrder(raw){
  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw Error('Invalid order');
  const {kind,good,amount=0,destination,refill=0,minimum_total=0}=raw;
- if(!['wait','load','travel','sell'].includes(kind)||![amount,refill,minimum_total].every(integer))throw Error('Use whole, non-negative quantities');
+ if(!['wait','load','travel','sell','list','buy','cancel'].includes(kind)||![amount,refill,minimum_total].every(integer))throw Error('Use whole, non-negative quantities');
+ if(['list','buy','cancel'].includes(kind))return normalizeMarketOrder(raw);
  if(['load','sell'].includes(kind)&&!GOODS.includes(good))throw Error('Unknown cargo');
  if(kind==='travel'&&!['depot','habitat','clinic'].includes(destination))throw Error('Unknown destination');
  return {kind,...(['load','sell'].includes(kind)?{good,amount}:{}),...(kind==='travel'?{destination}:{}),...(kind==='load'?{refill}:{}),...(kind==='sell'?{minimum_total}:{})};
@@ -34,6 +34,7 @@ export function execute(s,seat,raw){
  if(!SEATS.includes(seat))return reject('Unknown merchant');
  let o;try{o=normalizeOrder(raw);}catch(e){return reject(e.message);}
  const p=s.merchants[seat],c=s.colony;
+ if(['list','buy','cancel'].includes(o.kind))return executeMarket(s,seat,o,accept,reject);
  if(o.kind==='wait')return accept('Waited');
  if(o.kind==='load'){
   if(p.location!=='depot')return reject('Loading is available only at the depot');
@@ -50,7 +51,7 @@ export function execute(s,seat,raw){
   const valid=p.location==='depot'?['habitat','clinic'].includes(o.destination):o.destination==='depot';
   if(!valid)return reject('Travel must go through the depot');
   if(p.tank<(p.location==='depot'?2:1))return reject('Not enough fuel for the trip and return');
-  p.location=o.destination;p.tank--;s.fuel_burned++;return accept('Travelled');
+  cancelOffer(s,seat);p.location=o.destination;p.tank--;s.fuel_burned++;return accept('Travelled');
  }
  if(o.kind==='sell'){
   if(p.location!==(o.good==='medicine'?'clinic':'habitat'))return reject('Cargo must be sold at its district');
@@ -94,11 +95,13 @@ export function settleRound(state,orders={},round=state.round){
   if(c.oxygen>=2&&c.medicine>=1&&c.health>=1)s.status='survived';
   else{s.status='collapsed';s.cause='The colony reached round 20 without the required oxygen and medicine reserves.';}
  }
- const record={round,priority:priority(round),orders:boundOrders,receipts,colony:copy(c),merchants:copy(s.merchants),status:s.status};s.history.push(record);
+ if(s.market&&s.status!=='playing')s.market.offers={};
+ const record={round,priority:priority(round),orders:boundOrders,receipts,colony:copy(c),merchants:copy(s.merchants),status:s.status,...s.market?{market:{offers:copy(s.market.offers),trades:copy(s.market.trades.filter(t=>t.round===round))}}:{}};s.history.push(record);
  if(s.status==='playing'){s.round=round+1;if(RELEASES.includes(s.round))s.depot.oxygen+=3;}
  return {state:s,record};
 }
 export function chooseNPC(s,seat='NPC',pending={}){
+ const market=marketNPCDecision(s,seat);if(market&&previewOrder(s,seat,market.order).accepted)return market.order;
  const p=s.merchants[seat],c=s.colony;
  if(p.location!=='depot'){
   const good=p.location==='clinic'?'medicine':p.cargo.oxygen?'oxygen':'fuel';
@@ -111,4 +114,5 @@ export function chooseNPC(s,seat='NPC',pending={}){
  if(c.medicine===0&&c.medicine_bought<3){const o={kind:'load',good:'medicine',amount:1,refill:2-p.tank};if(previewOrder(s,seat,o).accepted)return o;}
  return {...WAIT};
 }
-export function describe(o){if(!o||o.kind==='wait')return 'Wait';if(o.kind==='load')return `Load ${o.amount} ${o.good}${o.refill?` + ${o.refill} tank fuel`:''}`;if(o.kind==='travel')return `Travel to ${o.destination}`;return `Sell ${o.amount} ${o.good}`;}
+export function npcReason(s,pending={}){const market=marketNPCDecision(s,'NPC');if(market&&previewOrder(s,'NPC',market.order).accepted)return market.reason;const o=chooseNPC(s,'NPC',pending);return o.kind==='load'?`Buying ${o.good} to meet colony demand.`:o.kind==='travel'?'Moving cargo along my delivery route.':o.kind==='sell'?'Delivering cargo within district storage and procurement limits.':'No feasible trade meets my current policy.';}
+export function describe(o){if(!o||o.kind==='wait')return 'Wait';if(o.kind==='cancel')return 'Cancel my offer';if(o.kind==='list')return `Offer ${o.amount} ${o.good} at ${o.unit_price} credits each`;if(o.kind==='buy')return `Buy ${o.amount} ${o.good} from ${o.seller} at ${o.unit_price} each`;if(o.kind==='load')return `Load ${o.amount} ${o.good}${o.refill?` + ${o.refill} tank fuel`:''}`;if(o.kind==='travel')return `Travel to ${o.destination}`;return `Sell ${o.amount} ${o.good}`;}

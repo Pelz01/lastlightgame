@@ -2,9 +2,12 @@
   "project_id": "appgprj_6aea441349bc81918907ee2a68465714",
   "url": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
   "access": "public",
-  "version_id": "appgprj_6aea441349bc81918907ee2a68465714~appgver_7e740daf8b9c819197ea2fc17a61594a",
-  "deployment_id": "appgdep_6aea685905708191b21f458dd89e5b1f",
-  "commit_sha": "ccd7813cfa6edc5ff8d547a7353bf89e6ca87177",
+  "version_id": "appgprj_6aea441349bc81918907ee2a68465714~appgver_65021030443081919942b14fb379066a",
+  "deployment_id": "appgdep_6aebb3981e7c81919f7e52742bacf88c",
+  "commit_sha": "0be3169da44db704a9a0ab198c6cf79b0a1d6a03",
   "source_checkout": "hosting/site",
-  "status": "succeeded"
+  "status": "succeeded",
+  "runtime": "worker-esm",
+  "d1": "DB",
+  "env_set_revision": 1
 }

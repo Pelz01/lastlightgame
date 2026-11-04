@@ -7,7 +7,7 @@ export class RoomService{
  join({code,token,identity}={},client){
   let room;
   if(code){room=this.rooms.get(String(code).toUpperCase());if(!room)throw Error('Room not found. Check the six-character code.');}
-  else{if(this.rooms.size>=50)throw Error('Local room limit reached');do{code=randomBytes(3).toString('hex').toUpperCase();}while(this.rooms.has(code));room={code,game:createMatch(code),players:{},pending:{},deadline:null,started:false,updated:this.now()};this.rooms.set(code,room);}
+  else{if(this.rooms.size>=50)throw Error('Local room limit reached');do{code=randomBytes(3).toString('hex').toUpperCase();}while(this.rooms.has(code));room={code,game:createMatch(code,{market:true}),players:{},pending:{},deadline:null,started:false,updated:this.now()};this.rooms.set(code,room);}
   const hash=token?createHash('sha256').update(token).digest('hex'):null;
   let seat=Object.keys(room.players).find(s=>hash&&timingSafeEqual(Buffer.from(hash),Buffer.from(room.players[s].tokenHash)));
   if(!seat){if(room.started)throw Error('This match has already started. Reconnect using your original tab.');seat=['A','B'].find(s=>!room.players[s]);if(!seat)throw Error('Both merchant seats are occupied');token=randomBytes(24).toString('hex');room.players[seat]={tokenHash:createHash('sha256').update(token).digest('hex'),client,ready:false};room.game.identities[seat]=cleanIdentity(identity,seat);}

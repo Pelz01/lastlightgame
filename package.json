@@ -1,6 +1,6 @@
 {
   "name": "last-light",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "deploy:testnet": "node scripts/deploy-near.mjs",
     "verify:testnet": "node tests/near-testnet.mjs",
     "verify:interaction": "node tests/live-interaction.mjs",
-    "build:site": "npm run build && node scripts/build-hosted-client.mjs",
+    "build:site": "npm run build && node scripts/build-hosted-worker.mjs",
     "prestart": "node scripts/build-wallet.mjs",
     "predev": "node scripts/build-wallet.mjs"
   },

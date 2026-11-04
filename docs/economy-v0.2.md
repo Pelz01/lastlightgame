@@ -1,4 +1,6 @@
-# Last Light — economy v0.2 (implemented baseline)
+# Last Light — economy v0.2 (preserved baseline)
+
+> Version 0.3 adds the implemented merchant market and separately signing NPC described in [economy-v0.3.md](economy-v0.3.md). Optional-market and implementation-status statements below record the earlier v0.2 phase.
 
 This version supersedes [v0.1](economy.md). It incorporates the critical-oxygen window, exact turn sequence, feasible action schedule, inspectable NPC policy, hard procurement limits, and complete medicine rules. **The baseline is implemented in the JS game and NEAR testnet contract. Automated parity and integration tests pass; human enjoyment and balance remain unproven.**
 
