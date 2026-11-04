@@ -1,0 +1,2232 @@
+{
+  "format": "last-light-local-replay-v1",
+  "settlement": "near-testnet",
+  "contract": "last-light-323356eb.testnet",
+  "transactions": [
+    {
+      "method": "join_match",
+      "match_id": "000001",
+      "round": null,
+      "hash": "GQ98fcizfSz3wHVTjXEqajdX5CLDQwj3ccQph9d2sU87",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "ready_match",
+      "match_id": "000001",
+      "round": null,
+      "hash": "CNCjdx88JMGVvWCmaBd4xWhY37qzUgxSjM4vP6TkUdST",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 1,
+      "hash": "9DatfZYB5erXXqXYpzHf5DHb7qfUZUbYaVxHgkZvzPPd",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 1,
+      "hash": "DmGki1ExLTqMFJkkQW1GPuGvKsTPWAp1Byfy2gd7ebcv",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 2,
+      "hash": "Bv58YaSVkHR189LFG37VbhHDkj3XWa7TTqHDB4QLsEXy",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 2,
+      "hash": "AeGtaj5UwiPv3ZrAtebGByKtgBKXwDtAQkaQuuaJdVFG",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 3,
+      "hash": "5HpfoyY5bqWZoCUvrSFHCKmAJgL95kmCepWbruzvzXby",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 3,
+      "hash": "D2mFQuMNaxvQ7sQ6TdyL8rW6vAfxKne6UBgSBLvAJ5sM",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 4,
+      "hash": "8HzM4fc4zRs6EnFgWviUzzQn8C6J7bCxMaQR8BmPuJ4h",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 4,
+      "hash": "EDyoDWWgvGgP9H9uyoFbu2mWXQzhPkx25xXzdG6akc78",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 5,
+      "hash": "F4hYdP7cWsQTvp6zTA9MPjfAZY4q7a1bxR9tdiHpGxs6",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 5,
+      "hash": "AcRP3LPPpxJqMFaAcoMaovtuxELvsbmoKSEEDDpevA5A",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 6,
+      "hash": "4QByvgfHfdeSTDiSsyikta1V6hUMM4d5tPztAkKg8Ht4",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 6,
+      "hash": "C53qt7dAspKSSWKxBJJwDWUR3bEfzWa2ysnVVBnVQMhV",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 7,
+      "hash": "73eHxMi6SbiFnrC15LaMnUJ23j5VjXBz7uAMjbUhNWXh",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 7,
+      "hash": "BHajnCUWQowngZmaqGmxuXePX1KzcqLUEegHLaeoTo4D",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 8,
+      "hash": "BMyAk3MupoPb2tKssCN74dzZpEmsY1dy4NdFGgqLA8dz",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 8,
+      "hash": "4KEfdA4G8UXG6rRDDXSX4DWSVGbkMN4iZT8VRdCcoP1Y",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 9,
+      "hash": "9jzKYndoXUGVttWgjeBUJvTductx3HCFtJymyxz6nEJ3",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 9,
+      "hash": "BbfMkbF32TaxCZTP9wUTdXU6w16sCqGs5DWr3RyqqiFN",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 10,
+      "hash": "RfhHwSruswXvbs33CfDzTj5USXnasB93VSP9iZtNn3F",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 10,
+      "hash": "4HPWoanRH81krsjxGWTzj5wBmWwSm3JffnPKX2ogRLf3",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 11,
+      "hash": "7FrBpxyJdmfu4VtosxXv3qSkeeQjiFMCJ3pSmvJNgYyN",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 11,
+      "hash": "5ArsrXFSBvGP1yVKV8LPKUz4EvFgaLHXZ1asPcFSo5cu",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 12,
+      "hash": "6rrsc1yBS1gzQizB6ftprPJ857V9R1rrcom33fTdML5A",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 12,
+      "hash": "EDWhDqpjDgNKQZr7tP1TbwnRJkUvy3qPXsTQfas5M53N",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 13,
+      "hash": "A5RBy8fribdcwP3WZxYGKLxww2gTWcMqQGUdgmcUYvFd",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 13,
+      "hash": "4esAGHUHaxMhcTnJTzhf8rjhZFL2Qu5ZFyAcG4kVUyba",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 14,
+      "hash": "67Gb5hA6ai7i3bde2rq1ttc1DKTNk8g24YFWLME4PJrC",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 14,
+      "hash": "ER4b8CgKhhewo2AW115FSzeJiWFnLhWnR3xSpttSfykc",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 15,
+      "hash": "GmEyqwPDnL2GEMwtLFLkJzmBUhtfwB9nspmqvVuahLEK",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 15,
+      "hash": "2pSmdcB4PghXpjpsQHtTX4KPqGdQYoyan827vohqaMqT",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 16,
+      "hash": "7gmkfriK9qUoQQJGXjZAiE5kYckqNi5B5mM7X24FQB7n",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 16,
+      "hash": "qjJeAfCbBDwzMrN3LrGCr3gQdp2gckijYfN5AcCJmjK",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 17,
+      "hash": "4u8d7qqTjSWxcu2CyHZdLait1PZ3RspJzhKroMtFgGbh",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 17,
+      "hash": "FVhkHnUFF4Nxvtc3h9gJ9N61FEGEevHUTwtvohPCNgLS",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 18,
+      "hash": "HJD6U7MgN7NhAeYc2p2cJpxvvx6VdEm4eKzQSb4EXUUi",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 18,
+      "hash": "AMmRrTw1Wczj88Tu4JgeEsyn87HXZso568H6fGi8Fpbs",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 19,
+      "hash": "3bjcsRzDNqzjjnQrSBjFy5jZXy4fk9aPYqmcZ3JDPAkV",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 19,
+      "hash": "CunRhoBZvhc3tXcgxWpbnkEd5PLkPJSQKz2QxPt38gfQ",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "submit_order",
+      "match_id": "000001",
+      "round": 20,
+      "hash": "C82S7xANijSgendtonR6SdmJdxTUFR5sugnWK5BZFpyw",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    },
+    {
+      "method": "settle_round",
+      "match_id": "000001",
+      "round": 20,
+      "hash": "HDVjkREg8Z1Zinxcz3UbhCG6v6McqBorpdx4NFtQNpYG",
+      "account": "aurora.last-light-323356eb.testnet",
+      "contract": "last-light-323356eb.testnet",
+      "network": "testnet"
+    }
+  ],
+  "mode": "near",
+  "guided": false,
+  "game": {
+    "version": 1,
+    "id": "000001",
+    "round": 20,
+    "settledRound": 20,
+    "status": "survived",
+    "cause": null,
+    "identities": {
+      "A": {
+        "name": "Aurora Chain",
+        "portrait": "mara"
+      },
+      "B": {
+        "name": "Boreal Chain",
+        "portrait": "mara"
+      },
+      "NPC": {
+        "name": "Tess Calder",
+        "portrait": "tess"
+      }
+    },
+    "merchants": {
+      "A": {
+        "cash": 44,
+        "tank": 0,
+        "location": "depot",
+        "cargo": {
+          "oxygen": 0,
+          "medicine": 0,
+          "fuel": 0
+        }
+      },
+      "B": {
+        "cash": 40,
+        "tank": 0,
+        "location": "depot",
+        "cargo": {
+          "oxygen": 0,
+          "medicine": 0,
+          "fuel": 0
+        }
+      },
+      "NPC": {
+        "cash": 39,
+        "tank": 0,
+        "location": "depot",
+        "cargo": {
+          "oxygen": 0,
+          "medicine": 0,
+          "fuel": 0
+        }
+      }
+    },
+    "depot": {
+      "oxygen": 0,
+      "medicine": 1,
+      "fuel": 6
+    },
+    "colony": {
+      "oxygen": 2,
+      "medicine": 1,
+      "health": 2,
+      "treasury": 72,
+      "quota": 0,
+      "medicine_bought": 3,
+      "plant_fuel_used": 0,
+      "critical": false
+    },
+    "depot_revenue": 60,
+    "fuel_burned": 18,
+    "oxygen_consumed": 20,
+    "medicine_consumed": 3,
+    "history": [
+      {
+        "round": 1,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 180,
+          "quota": 18,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 17,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 2,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "habitat"
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 180,
+          "quota": 18,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 17,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 3,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3,
+            "minimum_total": 0
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 165,
+          "quota": 15,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 32,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 4,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "B": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 165,
+          "quota": 15,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 17,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 5,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "load",
+            "good": "medicine",
+            "amount": 1,
+            "refill": 2
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "habitat"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 1,
+            "payout": 0,
+            "cost": 4
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 165,
+          "quota": 15,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 28,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 17,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 6,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "clinic"
+          },
+          "B": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3,
+            "minimum_total": 0
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 0,
+          "health": 2,
+          "treasury": 150,
+          "quota": 12,
+          "medicine_bought": 0,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 28,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 32,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 25,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 7,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "sell",
+            "good": "medicine",
+            "amount": 1,
+            "minimum_total": 0
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "NPC": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 1,
+            "payout": 8,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 142,
+          "quota": 12,
+          "medicine_bought": 1,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 36,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 17,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 8,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "B": {
+            "kind": "load",
+            "good": "medicine",
+            "amount": 1,
+            "refill": 2
+          },
+          "NPC": {
+            "kind": "travel",
+            "destination": "habitat"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 1,
+            "payout": 0,
+            "cost": 4
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 142,
+          "quota": 12,
+          "medicine_bought": 1,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 36,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 28,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 17,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 9,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "wait"
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "clinic"
+          },
+          "NPC": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 127,
+          "quota": 9,
+          "medicine_bought": 1,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 36,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 28,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 10,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          },
+          "B": {
+            "kind": "sell",
+            "good": "medicine",
+            "amount": 1,
+            "minimum_total": 0
+          },
+          "NPC": {
+            "kind": "travel",
+            "destination": "depot"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 1,
+            "payout": 5,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 2,
+          "health": 2,
+          "treasury": 122,
+          "quota": 9,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 28,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 33,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 11,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "habitat"
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 2,
+          "health": 2,
+          "treasury": 122,
+          "quota": 9,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 28,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 33,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 12,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3,
+            "minimum_total": 0
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 107,
+          "quota": 6,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 43,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 33,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 13,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "B": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 107,
+          "quota": 6,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 43,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 25,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 14,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "load",
+            "good": "medicine",
+            "amount": 1,
+            "refill": 2
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "habitat"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 1,
+            "payout": 0,
+            "cost": 4
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 107,
+          "quota": 6,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 39,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 25,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 15,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "clinic"
+          },
+          "B": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3,
+            "minimum_total": 0
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 92,
+          "quota": 3,
+          "medicine_bought": 2,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 39,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 1,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 32,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 16,
+        "priority": [
+          "NPC",
+          "A",
+          "B"
+        ],
+        "orders": {
+          "A": {
+            "kind": "sell",
+            "good": "medicine",
+            "amount": 1,
+            "minimum_total": 0
+          },
+          "B": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "NPC": {
+            "kind": "load",
+            "good": "oxygen",
+            "amount": 3,
+            "refill": 2
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 1,
+            "payout": 5,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Loaded",
+            "filled": 3,
+            "payout": 0,
+            "cost": 8
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 2,
+          "health": 2,
+          "treasury": 87,
+          "quota": 3,
+          "medicine_bought": 3,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 44,
+            "tank": 1,
+            "location": "clinic",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 24,
+            "tank": 2,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 17,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "travel",
+            "destination": "depot"
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "travel",
+            "destination": "habitat"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 2,
+          "health": 2,
+          "treasury": 87,
+          "quota": 3,
+          "medicine_bought": 3,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 44,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 24,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 3,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 18,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "wait"
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "sell",
+            "good": "oxygen",
+            "amount": 3
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Sold",
+            "filled": 3,
+            "payout": 15,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 4,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 72,
+          "quota": 0,
+          "medicine_bought": 3,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 44,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 39,
+            "tank": 1,
+            "location": "habitat",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 19,
+        "priority": [
+          "A",
+          "B",
+          "NPC"
+        ],
+        "orders": {
+          "A": {
+            "kind": "wait"
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "travel",
+            "destination": "depot"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Travelled",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 3,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 72,
+          "quota": 0,
+          "medicine_bought": 3,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 44,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 39,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "playing"
+      },
+      {
+        "round": 20,
+        "priority": [
+          "B",
+          "NPC",
+          "A"
+        ],
+        "orders": {
+          "A": {
+            "kind": "wait"
+          },
+          "B": {
+            "kind": "wait"
+          },
+          "NPC": {
+            "kind": "wait"
+          }
+        },
+        "receipts": {
+          "A": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "B": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          },
+          "NPC": {
+            "accepted": true,
+            "reason": "Waited",
+            "filled": 0,
+            "payout": 0,
+            "cost": 0
+          }
+        },
+        "colony": {
+          "oxygen": 2,
+          "medicine": 1,
+          "health": 2,
+          "treasury": 72,
+          "quota": 0,
+          "medicine_bought": 3,
+          "plant_fuel_used": 0,
+          "critical": false
+        },
+        "merchants": {
+          "A": {
+            "cash": 44,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "B": {
+            "cash": 40,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          },
+          "NPC": {
+            "cash": 39,
+            "tank": 0,
+            "location": "depot",
+            "cargo": {
+              "oxygen": 0,
+              "medicine": 0,
+              "fuel": 0
+            }
+          }
+        },
+        "status": "survived"
+      }
+    ]
+  }
+}

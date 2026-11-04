@@ -1,0 +1,9 @@
+.git
+node_modules
+design/assets
+design/node_modules
+qa
+*.zip
+data
+contracts
+hosting

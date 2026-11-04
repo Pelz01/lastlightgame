@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {createMatch,settleRound,chooseNPC,WAIT} from '../game/rules.js';import {PLANS} from '../game/plans.js';
+const fixtures=JSON.parse(fs.readFileSync(new URL('./fixtures/python-oracle.json',import.meta.url),'utf8'));
+for(const [name,rows] of Object.entries(fixtures))test(`JavaScript matches independent Python ${name} trace at every round`,()=>{let s=createMatch('parity');for(let r=1;r<=20;r++){const orders={A:PLANS.A[r]||WAIT,B:PLANS.B[r]||WAIT};orders.NPC=name==='reactive_npc'?chooseNPC(s,'NPC',orders):(PLANS.NPC[r]||WAIT);s=settleRound(s,orders).state;const expected=rows[r-1];assert.deepEqual(s.colony,expected.colony,'colony at '+r);assert.deepEqual(s.depot,expected.depot,'depot at '+r);assert.deepEqual(s.merchants,expected.merchants,'merchants at '+r);assert.equal(s.status==='collapsed',expected.collapse);}});

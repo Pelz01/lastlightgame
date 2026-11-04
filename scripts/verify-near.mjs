@@ -1,0 +1,12 @@
+import {spawnSync} from 'node:child_process';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {createMatch,settleRound,chooseNPC,normalizeOrder,copy} from '../game/rules.js';import {PLANS} from '../game/plans.js';
+const dir=process.cwd(),linux=process.platform==='win32'?'/mnt/'+dir[0].toLowerCase()+dir.slice(2).replaceAll('\\','/'):dir;
+function trace(input){const target=linux+'/contracts/last-light/target/debug/trace';const run=process.platform==='win32'?spawnSync('wsl',['-d','Ubuntu','--',target],{input:JSON.stringify(input),encoding:'utf8',maxBuffer:5e6}):spawnSync(target,[],{input:JSON.stringify(input),encoding:'utf8',maxBuffer:5e6});if(run.status!==0)throw Error(run.stderr);return JSON.parse(run.stdout);}
+let rounds=[],s=createMatch('parity');for(let r=1;r<=20;r++){const o={A:normalizeOrder(PLANS.A[r]||{kind:'wait'}),B:normalizeOrder(PLANS.B[r]||{kind:'wait'})};o.NPC=chooseNPC(s,'NPC',o);rounds.push(copy(o));s=settleRound(s,o).state;}
+assert.deepEqual(trace({rounds}),s,'Full 20-round Rust trace must match the existing JS oracle, including every receipt');
+let seed=71921;const random=n=>{seed=(seed*1664525+1013904223)>>>0;return seed%n;};
+for(let i=0;i<100;i++){
+ const state=createMatch('adversarial-'+i);state.round=1+random(20);state.settledRound=state.round-1;state.colony.oxygen=random(8);state.colony.critical=state.colony.oxygen===0;state.colony.medicine=random(3);state.colony.health=1+random(2);state.colony.quota=random(19);state.colony.plant_fuel_used=random(4);state.colony.medicine_bought=random(4);state.colony.treasury=random(181);
+ const orders={};for(const seat of ['A','B','NPC']){const p=state.merchants[seat];p.location=['depot','habitat','clinic'][random(3)];p.tank=random(3);p.cargo={oxygen:random(4),medicine:random(3),fuel:random(3)};const kind=['load','travel','sell','wait'][random(4)];orders[seat]=normalizeOrder({kind,good:['oxygen','medicine','fuel'][random(3)],amount:random(7),refill:random(3),destination:['depot','habitat','clinic'][random(3)],minimum_total:random(30)});}
+ assert.deepEqual(trace({state,rounds:[orders]}),settleRound(state,orders).state,'Adversarial Rust/JS divergence case '+i);
+}
+await fs.mkdir('qa/near',{recursive:true});await fs.writeFile('qa/near/parity.json',JSON.stringify({passed:true,fullMatchRounds:20,adversarialCases:100,comparison:'complete state, history, NPC decisions, receipts and balances'},null,2));console.log('PASS: Rust matches JS through 20 rounds and 100 adversarial settlements.');

@@ -1,0 +1,2046 @@
+{
+  "witness": [
+    {
+      "round": 1,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 180,
+        "quota": 18,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 2,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 180,
+        "quota": 18,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 3,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 4,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 20
+      },
+      "merchants": {
+        "A": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 5,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 3,
+        "fuel": 18
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 6,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 0,
+        "health": 2,
+        "treasury": 150,
+        "quota": 12,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 3,
+        "fuel": 18
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 7,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 142,
+        "quota": 12,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 3,
+        "fuel": 16
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 8,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 142,
+        "quota": 12,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 14
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 9,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 127,
+        "quota": 9,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 2,
+        "fuel": 14
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 28,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 10,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 122,
+        "quota": 9,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 11,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 122,
+        "quota": 9,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 12,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 43,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 13,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 10
+      },
+      "merchants": {
+        "A": {
+          "cash": 43,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 14,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 8
+      },
+      "merchants": {
+        "A": {
+          "cash": 39,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 15,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 92,
+        "quota": 3,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 1,
+        "fuel": 8
+      },
+      "merchants": {
+        "A": {
+          "cash": 39,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 16,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 87,
+        "quota": 3,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 24,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 17,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 87,
+        "quota": 3,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 24,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 18,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 19,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 20,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    }
+  ],
+  "reactive_npc": [
+    {
+      "round": 1,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 180,
+        "quota": 18,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 2,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 180,
+        "quota": 18,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 3,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 4,
+        "fuel": 22
+      },
+      "merchants": {
+        "A": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 4,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 4,
+        "fuel": 20
+      },
+      "merchants": {
+        "A": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 5,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 165,
+        "quota": 15,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 3,
+        "fuel": 18
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 6,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 0,
+        "health": 2,
+        "treasury": 150,
+        "quota": 12,
+        "medicine_bought": 0,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 3,
+        "fuel": 18
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 25,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 7,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 142,
+        "quota": 12,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 3,
+        "fuel": 16
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 17,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 8,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 142,
+        "quota": 12,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 14
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 17,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 9,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 127,
+        "quota": 9,
+        "medicine_bought": 1,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 2,
+        "fuel": 14
+      },
+      "merchants": {
+        "A": {
+          "cash": 36,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 28,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 10,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 122,
+        "quota": 9,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 11,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 122,
+        "quota": 9,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 28,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 12,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 2,
+        "fuel": 12
+      },
+      "merchants": {
+        "A": {
+          "cash": 43,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 33,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 13,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 2,
+        "fuel": 10
+      },
+      "merchants": {
+        "A": {
+          "cash": 43,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 14,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 107,
+        "quota": 6,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 8
+      },
+      "merchants": {
+        "A": {
+          "cash": 39,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 25,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 15,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 92,
+        "quota": 3,
+        "medicine_bought": 2,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 3,
+        "medicine": 1,
+        "fuel": 8
+      },
+      "merchants": {
+        "A": {
+          "cash": 39,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 1,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 32,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 16,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 87,
+        "quota": 3,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 1,
+          "location": "clinic",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 24,
+          "tank": 2,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 17,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 2,
+        "health": 2,
+        "treasury": 87,
+        "quota": 3,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 24,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 3,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 18,
+      "colony": {
+        "oxygen": 4,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 1,
+          "location": "habitat",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 19,
+      "colony": {
+        "oxygen": 3,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    },
+    {
+      "round": 20,
+      "colony": {
+        "oxygen": 2,
+        "medicine": 1,
+        "health": 2,
+        "treasury": 72,
+        "quota": 0,
+        "medicine_bought": 3,
+        "plant_fuel_used": 0,
+        "critical": false
+      },
+      "depot": {
+        "oxygen": 0,
+        "medicine": 1,
+        "fuel": 6
+      },
+      "merchants": {
+        "A": {
+          "cash": 44,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "B": {
+          "cash": 40,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        },
+        "NPC": {
+          "cash": 39,
+          "tank": 0,
+          "location": "depot",
+          "cargo": {
+            "oxygen": 0,
+            "medicine": 0,
+            "fuel": 0
+          }
+        }
+      },
+      "collapse": false
+    }
+  ]
+}

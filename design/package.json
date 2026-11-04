@@ -1,0 +1,18 @@
+{
+  "name": "last-light-design-kit",
+  "version": "1.0.0",
+  "description": "Last Light source artwork, optimized runtime assets and offline design library",
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "node verify.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "playwright": "^1.64.1",
+    "sharp": "^0.35.5"
+  },
+  "private": true
+}

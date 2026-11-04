@@ -1,0 +1,13 @@
+import {chromium} from 'playwright';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
+await fs.mkdir('qa',{recursive:true});const browser=await chromium.launch({channel:'msedge',headless:true});const errors=[];
+try{
+ for(const [name,width,height] of [['desktop',1366,768],['mobile',390,844],['small-mobile',360,800]]){
+  const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));const requested=[];page.on('request',r=>requested.push(r.url()));await page.goto('http://127.0.0.1:4173');await page.locator('.game-front').waitFor();await page.evaluate(()=>document.fonts.ready);
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),name+' overflow');assert.equal(await page.locator('.landing-faq').count(),0,'Rules should not fill the landing page');assert(!requested.some(url=>url.includes('guide-data.js')),'Load detailed rules only when requested');
+  const words=(await page.locator('main').innerText()).split(/\s+/).length;assert(words<200,'Keep visible landing copy concise');const cta=await page.locator('.start-button').boundingBox();assert(cta.y+cta.height<=height,name+' Play below fold');await page.screenshot({path:`qa/landing-${name}.png`});
+  await page.locator('.match-settings summary').click();await page.fill('#merchant-name','Pilot Nova');await page.locator('.match-settings summary').click();
+  await page.locator('.front-intro [data-do=rules]').click();await page.locator('.field-guide').waitFor();assert.equal(await page.locator('.landing-faq details').count(),18);await page.locator('.landing-faq summary').first().click();assert(await page.locator('.landing-faq details').first().locator('p').isVisible());await page.locator('.field-guide [data-do=home]').first().click();
+  await page.locator('.start-button').click();await page.locator('#confirm').waitFor();assert.equal(await page.locator('[data-rover]').count(),3);assert((await page.locator('.panel-heading .eyebrow').innerText()).toLowerCase().includes('pilot nova'));await page.click('#confirm');assert.equal((await page.locator('.round-label b').innerText()).trim(),'02');await page.close();
+ }
+ assert.deepEqual(errors,[]);await fs.writeFile('qa/landing-report.json',JSON.stringify({passed:true,compactLanding:true,guideLoadsOnDemand:true,guideQuestions:18,viewports:[1366,390,360],playVisible:true,merchantSettings:true,gameEntry:true,scriptErrors:errors},null,2));console.log('PASS: compact landing, on-demand field guide, settings and game entry at desktop/390/360px.');
+}finally{await browser.close();}

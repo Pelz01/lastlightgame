@@ -1,0 +1,21 @@
+import {chromium} from 'playwright';import {spawn} from 'node:child_process';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {PLANS} from '../game/plans.js';
+await fs.mkdir('qa',{recursive:true});const port=4174,origin=`http://127.0.0.1:${port}`;
+const server=spawn(process.execPath,['server.mjs'],{env:{...process.env,PORT:String(port),NODE_ENV:'test',LAST_LIGHT_TEST_ROUND_MS:'3000'},stdio:'ignore'});
+let browser;const errors=[];
+try{
+ for(let i=0;i<50;i++){try{if((await fetch(origin+'/health')).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
+ const info=await fetch(origin+'/connection').then(r=>r.json());const remote=info.networkUrls.find(u=>u.includes('192.168.'))||info.networkUrls[0]||origin;
+ browser=await chromium.launch({channel:'msedge',headless:true});const a=await browser.newContext({viewport:{width:1366,height:768}}),b=await browser.newContext({viewport:{width:1100,height:900}});const host=await a.newPage(),guest=await b.newPage();for(const page of [host,guest])page.on('pageerror',e=>errors.push(e.message));
+ await host.goto(origin);await host.locator('.match-settings summary').click();await host.fill('#merchant-name','Ada North');await host.check('input[name=merchant-portrait][value=ilan]',{force:true});await host.click('[data-do=create-room]');await host.locator('.room-code strong').waitFor();const code=await host.locator('.room-code strong').innerText();
+ await guest.goto(remote+'/?room='+code);await guest.locator('.match-settings summary').click();await guest.fill('#merchant-name','Biko Vale');await guest.locator('#join-form button').click();await guest.locator('.room-code strong').waitFor();assert((await host.locator('.room-seats').innerText()).includes('Biko Vale'));await host.click('[data-do=ready]');await guest.click('[data-do=ready]');await host.locator('#confirm').waitFor();
+ for(const page of [host,guest]){assert.equal(await page.locator('[data-rover]').count(),3);assert.equal(await page.locator('.plant-annex').count(),1);assert.equal(await page.locator('.map-node').count(),3);const sizes=await page.locator('.ground-building').evaluateAll(es=>es.map(e=>e.getBoundingClientRect().width));assert(sizes.every(w=>w>=45),'All four buildings must have visible dimensions');assert.equal(await page.locator('.cargo-withheld').count(),2);}
+ await host.screenshot({path:'qa/rover-room-start.png'});
+ async function order(page,o){await page.locator(`[data-kind=${o.kind}]`).click();if(o.kind==='load'||o.kind==='sell'){await page.locator(`[data-good=${o.good}]`).click();await page.fill('#quantity',String(o.amount));if(o.kind==='load')await page.selectOption('#refill',String(o.refill||0));}if(o.kind==='travel')await page.click(`[data-destination=${o.destination}]`);await page.click('#confirm');}
+ for(let round=1;round<=20;round++){
+  for(const page of [host,guest])await page.waitForFunction(r=>document.querySelector('.round-label b')?.textContent.trim()===String(r).padStart(2,'0'),round,{timeout:8000});
+  await Promise.all([order(host,PLANS.A[round]||{kind:'wait'}),order(guest,PLANS.B[round]||{kind:'wait'})]);
+  if(round===1){assert((await host.locator('.cash').innerText()).includes('25'),'Included load must not spend settled credits');assert(!(await guest.locator('.merchant.is-you .merchant-cargo').innerText()).includes('undefined'));}
+ }
+ await host.locator('.result-screen.survived').waitFor({timeout:8000});await guest.locator('.result-screen.survived').waitFor();assert((await host.locator('.score-table').innerText()).includes('Ada North'));assert((await guest.locator('.score-table').innerText()).includes('Biko Vale'));assert((await host.locator('.score-table').innerText()).includes('44'));await host.screenshot({path:'qa/rover-room-result.png'});assert.deepEqual(errors,[]);
+ const report={passed:true,rounds:20,humanBrowsers:2,hostOrigin:origin,guestOrigin:remote,differentOrigins:remote!==origin,identitiesShared:true,cargoWithheldInMainUI:true,groundBuildingsVisible:4,roverCount:3,sharedSurvival:true,productionRoundMs:15000,testRoundMs:3000,scriptErrors:errors};await fs.writeFile('qa/rover-room-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+}finally{await browser?.close();server.kill();}

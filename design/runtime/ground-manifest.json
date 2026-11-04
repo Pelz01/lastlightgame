@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "purpose": "Ground colony, cargo rovers and merchant identities",
+  "files": {
+    "buildings-ground.webp": {
+      "bytes": 71732,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "sha256": "76d2f058df0fee8157509c01890c8e77602d9ba7eb017505710889bc1c247a9a"
+    },
+    "rovers-ground.webp": {
+      "bytes": 20074,
+      "width": 480,
+      "height": 160,
+      "alpha": true,
+      "sha256": "54d2a108d9a90dbd61fa37411ca316cace83e9d212df9f44bb09e71b76912a3f"
+    },
+    "portraits-ground.webp": {
+      "bytes": 11514,
+      "width": 432,
+      "height": 144,
+      "alpha": false,
+      "sha256": "f371dc495dbb7d9d3cc073101c8e764e9d0bd66e6f1902c99256323190dba287"
+    },
+    "colony-ground-960.webp": {
+      "bytes": 126268,
+      "width": 960,
+      "height": 540,
+      "alpha": false,
+      "sha256": "539ed7d345a41e4aaade68124fcfc5a3fed71291501a4fb398ca9865390958c9"
+    },
+    "colony-ground-1440.webp": {
+      "bytes": 245376,
+      "width": 1440,
+      "height": 810,
+      "alpha": false,
+      "sha256": "2ee6bb84f8305a82de33f0fb3cc99ded94ceedd95833bb1cb9a107217c407bd2"
+    }
+  }
+}

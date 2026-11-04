@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "generatedBy": "node build.mjs",
+  "files": {
+    "audio.mjs": {
+      "bytes": 1121,
+      "sha256": "c0340d49ad1bb884784e8b636e5f3c1fb476e5366caa78480280b51d6d409629"
+    },
+    "barlow-condensed-latin-600.woff2": {
+      "bytes": 22308,
+      "sha256": "215a93c696f442034a46fbb382958f753fda60e30490683aeea6b235fcbb2b66"
+    },
+    "colony-1440.webp": {
+      "bytes": 115854,
+      "sha256": "de1261f4a4156a921ea3ce58a74f3527fc41084e798933b254fc3158065020d2"
+    },
+    "colony-960.webp": {
+      "bytes": 53692,
+      "sha256": "d898a637fab4ed0d70ad28708ba00044c7caaf7b74ac9dea81df816f308b0030"
+    },
+    "components.css": {
+      "bytes": 12781,
+      "sha256": "d91a7a480856711a3ab9a0ead2867a5b40a7065d6e59473091a1e88908ba1b89"
+    },
+    "concept-preview.webp": {
+      "bytes": 96448,
+      "sha256": "72b57681bb547179a41bde74c6e1eb571bdb7dad1adde3ad06e39f276e8a1189"
+    },
+    "districts.json": {
+      "bytes": 1207,
+      "sha256": "2c696f992fe0d7a3f91c55ea8363d83238dea139c2a7b67d41f1840c0131faac"
+    },
+    "districts.webp": {
+      "bytes": 120276,
+      "sha256": "714a1f4858557f890e2cc36e8875ca1688c497c3c65d18d5bb748ebad3439821"
+    },
+    "FONT-LICENSE.txt": {
+      "bytes": 6167,
+      "sha256": "046ee27d8bddc6b6ee08eee53c96dbf3ec1f6df561644e018507dd8ffcb11d31"
+    },
+    "gallery.js": {
+      "bytes": 11534,
+      "sha256": "1322557484b526494a563950ae8f4ce688ce210efbb198db5274780be3f620d9"
+    },
+    "icons.svg": {
+      "bytes": 7553,
+      "sha256": "3d5aeaa136c8ac09f52cc000244fc0f4acc4648171281a8141c218b4398c007a"
+    },
+    "index.html": {
+      "bytes": 26307,
+      "sha256": "093c1e45eb2b542f94b9ba0e3770865974bcfa505249f780a824b897bb59f29e"
+    },
+    "mark.svg": {
+      "bytes": 187,
+      "sha256": "9a97796c89674a3963bf9fd1e9753f67ea51361c3598d7c680b12a310825c70a"
+    },
+    "merchant-ship.webp": {
+      "bytes": 11994,
+      "sha256": "6db553fe4f037a9fb19207daa2c6da6fe7e1658f2df2fa37027cfcc1ce6f0373"
+    },
+    "resources.json": {
+      "bytes": 1206,
+      "sha256": "2a696b2f3343d6e3ef4827dc98fb854ccb55e17d50bb249b6fd88be15a3f3bbd"
+    },
+    "resources.webp": {
+      "bytes": 46370,
+      "sha256": "888787b537a12f16c69a510aba124b2cd31263f62b0e63666a0b8aa0d61b08f7"
+    },
+    "tokens.css": {
+      "bytes": 741,
+      "sha256": "3aafbb3789d30d8329edbf0ca6162c2a747a821fe2944054bcca05bd76c3b9de"
+    },
+    "tokens.json": {
+      "bytes": 798,
+      "sha256": "4b6e2d78b3dac187d97a81f62cddd0845fcd24b72d4fe75e1d9f89646cac499d"
+    },
+    "wordmark.svg": {
+      "bytes": 420,
+      "sha256": "75536b14680b8410db5269474ab7ea672d9a59dfe9b172a98575ced0e1e59c1b"
+    },
+    "icons/arrow.svg": {
+      "bytes": 195,
+      "sha256": "4c623992fcfe8794dcb1678137b22801aaad900c4864b22c18ce7edfbba35841"
+    },
+    "icons/buy.svg": {
+      "bytes": 214,
+      "sha256": "8c1e6fcf08689d06ba9849aea1a0cb6b845c0f2f785cc2a33630738356129764"
+    },
+    "icons/cargo.svg": {
+      "bytes": 220,
+      "sha256": "1a74c77c642fb7b723582cfcf9226dfd23d0093ae54a83a62005d3e3714d5ac5"
+    },
+    "icons/check.svg": {
+      "bytes": 188,
+      "sha256": "55107deb0fb0177a6affc91bbc280ed6727a3d9016fef845cda0d1d4da468e6b"
+    },
+    "icons/clinic.svg": {
+      "bytes": 211,
+      "sha256": "74ae7847a0e48cbf87783b0236b3e5de9d90d62af8d6251cfe60171c085bf5e3"
+    },
+    "icons/clock.svg": {
+      "bytes": 216,
+      "sha256": "23686c3a9792b30001d372b0fdc2972f4abcaf64ce0e134a724ac6ae1a0abf8e"
+    },
+    "icons/close.svg": {
+      "bytes": 194,
+      "sha256": "5425fcc96dbec7f6daf66d3f12b08b3407534b4140a167e73e5c8fbdb1619464"
+    },
+    "icons/credits.svg": {
+      "bytes": 259,
+      "sha256": "db0a8b1a1d8391757f5936406602f3418bbf546ede0a3b3b6e6eaf49ac0ad2f6"
+    },
+    "icons/depot.svg": {
+      "bytes": 212,
+      "sha256": "05bdcfd76f35d294edfb65281644c8c8c6077a669cd5b6aaacf5fdc3f20abb08"
+    },
+    "icons/fuel.svg": {
+      "bytes": 214,
+      "sha256": "9cea3f811f5804972a3d90d8f8052ebcf8d3e34a0f82bb8ed9acb5981cff097b"
+    },
+    "icons/habitat.svg": {
+      "bytes": 231,
+      "sha256": "1b371d88f04c80101ba749d8fbf54d317cb6242ede096b8b32b96e662453bd54"
+    },
+    "icons/health.svg": {
+      "bytes": 213,
+      "sha256": "1418549b4ac8371f333eedf790ffb216c36330b8e9924c227f0b688e1f567ec8"
+    },
+    "icons/help.svg": {
+      "bytes": 243,
+      "sha256": "4ec4e6c6c9ffc208920339a39ba15fd12d247bf30f05f14fcfe7d5fa423b0368"
+    },
+    "icons/included.svg": {
+      "bytes": 212,
+      "sha256": "c875f2dbdad2d9e73d6a58132867b1d0bf142b24eb54550c6d49e433f37303a9"
+    },
+    "icons/link.svg": {
+      "bytes": 239,
+      "sha256": "9df9643a851e270f064a3330b9126c135b6325f7b43d9dcaab9583be7e8da7e0"
+    },
+    "icons/lock.svg": {
+      "bytes": 254,
+      "sha256": "81f8e1cfa3aa6abded19ca43615dc0c391a211e19ca7e692c78d79975e0408ad"
+    },
+    "icons/medicine.svg": {
+      "bytes": 247,
+      "sha256": "236db74bb1f21a909df9c0aca32b11758a5840ce365b37e14b79a2a8ddf6391a"
+    },
+    "icons/merchantA.svg": {
+      "bytes": 202,
+      "sha256": "7d6c3b010c8a5a338a8e33fd63e13f98e2f474d6541b4b61bc33c74fbb1f419a"
+    },
+    "icons/merchantB.svg": {
+      "bytes": 211,
+      "sha256": "83f02a535f5abc280ba1161995410b9f13b5df6813fa046e4603b4c1e6cc221a"
+    },
+    "icons/merchantNPC.svg": {
+      "bytes": 249,
+      "sha256": "e6ed7c4df64fb44fc894d8727100277e5047dd0b33ee93c46688fcc82c7795d4"
+    },
+    "icons/mute.svg": {
+      "bytes": 212,
+      "sha256": "b89ef4c88f5b3e40273944440b7783bb54369f1f318a056b299a9c69b6fb5946"
+    },
+    "icons/oxygen.svg": {
+      "bytes": 204,
+      "sha256": "7e86a35a7c21123a9ee6757b2ceed2d818fee9493dc112ec98bf3aedda9bb2b0"
+    },
+    "icons/plant.svg": {
+      "bytes": 221,
+      "sha256": "edaccbe7e00ca433dee672e9529bae544f170977e2e53641f2d7ac1aa02e629a"
+    },
+    "icons/queued.svg": {
+      "bytes": 227,
+      "sha256": "66e5c5f185c476fa4960574aed7cddf23b77c6b066a6a2c2ca003c8e92372189"
+    },
+    "icons/reconnect.svg": {
+      "bytes": 203,
+      "sha256": "10dd41159fa2773df34513cf5115d57560db2de834122d4d671b4032dcc8bd35"
+    },
+    "icons/reject.svg": {
+      "bytes": 221,
+      "sha256": "d06e6e373971c81aee70d86a0b2a56afb0ee42b9acd4587805ae24addeb0f8bf"
+    },
+    "icons/sell.svg": {
+      "bytes": 224,
+      "sha256": "bc281f5fd3a2d8cfcf265e8aa69fa4e21bb282b4c74c6e2043764a770d101edd"
+    },
+    "icons/settings.svg": {
+      "bytes": 288,
+      "sha256": "747523a9cb9590b20cf10e139214090a7790bf4082a9c8f1758adff64f22e573"
+    },
+    "icons/sound.svg": {
+      "bytes": 232,
+      "sha256": "7bef2cf45f1cb87b759aafb08d038a98df09777a3d6cf4eba3663349dc3eec96"
+    },
+    "icons/tank.svg": {
+      "bytes": 241,
+      "sha256": "3846f79ee437946c243ef15afc9a74cc5bb32d976d3d3e39ce1e2f36b6fdfa08"
+    },
+    "icons/travel.svg": {
+      "bytes": 204,
+      "sha256": "f36adcb1a880deb1015019cc7dce27a284e7c96b13814106d68ec69572184a88"
+    },
+    "icons/trophy.svg": {
+      "bytes": 257,
+      "sha256": "b8a5d5cdffd38a8a20941527b9573cb4ced51500f0a0ed206712d13d4100ab98"
+    },
+    "icons/wait.svg": {
+      "bytes": 218,
+      "sha256": "c4e9eb17fd85b94fdb77014274fce3ab9411e0c69e3f65e609ff20b486cdc144"
+    },
+    "icons/warning.svg": {
+      "bytes": 203,
+      "sha256": "8caf6759e7641d18c0e49f810534e1ed7e0b2f86d2782a9be2cf18945be8f2df"
+    }
+  },
+  "loadGroups": {
+    "boot": [
+      "tokens.css",
+      "components.css",
+      "icons.svg",
+      "mark.svg",
+      "wordmark.svg",
+      "barlow-condensed-latin-600.woff2"
+    ],
+    "match": [
+      "resources.webp",
+      "resources.json",
+      "districts.webp",
+      "districts.json",
+      "merchant-ship.webp"
+    ],
+    "lobbyMobile": [
+      "colony-960.webp"
+    ],
+    "lobbyDesktop": [
+      "colony-1440.webp"
+    ],
+    "optionalSound": [
+      "audio.mjs"
+    ],
+    "referenceOnly": [
+      "concept-preview.webp"
+    ]
+  },
+  "groupBytes": {
+    "boot": 43990,
+    "match": 181053,
+    "lobbyMobile": 53692,
+    "lobbyDesktop": 115854,
+    "optionalSound": 1121,
+    "referenceOnly": 96448
+  },
+  "budgets": {
+    "limits": {
+      "initialMatchBytes": 750000,
+      "initialLobbyMobileBytes": 500000,
+      "allRasterTextureBytes": 1500000
+    },
+    "initialMatchBytes": 225043,
+    "initialLobbyMobileBytes": 97682,
+    "textureBytes": 348186,
+    "checks": {
+      "initialMatch": true,
+      "lobbyMobile": true,
+      "rasters": true
+    }
+  },
+  "iconNames": [
+    "oxygen",
+    "medicine",
+    "fuel",
+    "depot",
+    "habitat",
+    "clinic",
+    "plant",
+    "credits",
+    "cargo",
+    "tank",
+    "travel",
+    "buy",
+    "sell",
+    "wait",
+    "clock",
+    "health",
+    "warning",
+    "check",
+    "reject",
+    "queued",
+    "included",
+    "link",
+    "reconnect",
+    "settings",
+    "sound",
+    "mute",
+    "help",
+    "close",
+    "arrow",
+    "lock",
+    "trophy",
+    "merchantA",
+    "merchantB",
+    "merchantNPC"
+  ],
+  "note": "Asset bytes only; excludes application logic, wallet SDK, RPC traffic and browser decode memory."
+}

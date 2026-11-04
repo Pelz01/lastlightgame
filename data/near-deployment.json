@@ -1,0 +1,17 @@
+{
+  "accountId": "last-light-323356eb.testnet",
+  "network": "testnet",
+  "rpcUrl": "https://test.rpc.fastnear.com",
+  "status": "deployed",
+  "hash": "EvDxWga3JmNTiCgbDDKwNKatat8idjyBVgaKG2whWypG",
+  "wasmSha256": "1bdb651e332c27a6f95c9aa525450328657808d2c0e3c0eaba634f4e6e896adf",
+  "version": {
+    "create_deposit": "500000000000000000000000",
+    "credits": "match-scoped, non-transferable game units",
+    "max_matches": 100,
+    "network": "testnet",
+    "round_ms": 15000,
+    "rules_version": 1,
+    "version": "0.2.0"
+  }
+}

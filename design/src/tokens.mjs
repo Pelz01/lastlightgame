@@ -1,0 +1,7 @@
+export const tokens = {
+ color:{space:'#090e11',panel:'#141c1d',raised:'#1b2729',line:'#344548',text:'#e9e7d9',muted:'#a4b2ad',oxygen:'#9cdbc3',medicine:'#f29381',fuel:'#eec384',danger:'#ff8277',merchantA:'#9cdbc3',merchantB:'#eec384',merchantNPC:'#c2c6cc'},
+ space:{xs:'4px',sm:'8px',md:'16px',lg:'24px',xl:'32px',xxl:'48px'},
+ radius:{control:'4px',panel:'6px'},
+ motion:{feedback:'140ms',panel:'180ms',settledTravel:'600ms'},
+ type:{body:'system-ui, sans-serif',display:'"Barlow Condensed", "Arial Narrow", sans-serif',data:'ui-monospace, Consolas, monospace'}
+};

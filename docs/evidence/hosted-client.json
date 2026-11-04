@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "url": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+  "publicResponse": 200,
+  "desktop": true,
+  "mobile": true,
+  "walletSelector": "real external manifest, no mock wallet",
+  "localRoomControlsOmitted": true,
+  "scriptErrors": [],
+  "testnetRpcFromPublicOrigin": true,
+  "publicPracticeBuyAndSettlement": true
+}

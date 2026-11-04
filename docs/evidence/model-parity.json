@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "fullMatchRounds": 20,
+  "adversarialCases": 100,
+  "comparison": "complete state, history, NPC decisions, receipts and balances"
+}

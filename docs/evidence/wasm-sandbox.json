@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "environment": "NEAR sandbox (actual deployed WASM, not mocked contract)",
+  "rounds": 20,
+  "checks": [
+    "wallet cannot control another merchant",
+    "early settlement rejected",
+    "late order rejected without carry-over",
+    "20-round deployed WASM matches all JS states and receipts",
+    "replacements charge only final included order",
+    "any account can settle after cutoff",
+    "duplicate settlement is idempotent",
+    "NPC uses the same economy",
+    "terminal ownership frozen",
+    "wallet ownership survives fresh state reads"
+  ]
+}

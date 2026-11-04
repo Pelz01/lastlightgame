@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "network": "testnet",
+  "contract": "last-light-323356eb.testnet",
+  "matchId": "000001",
+  "rounds": 20,
+  "twoBrowserWallets": [
+    "aurora.last-light-323356eb.testnet",
+    "boreal.last-light-323356eb.testnet"
+  ],
+  "signing": "QA injected wallets for setup; real restricted function-call keys for play; no mocked RPC",
+  "reloadRecoveryRound": 2,
+  "fullStateParity": true,
+  "status": "survived",
+  "setupTransactions": [
+    {
+      "account": "aurora.last-light-323356eb.testnet",
+      "receiver": "aurora.last-light-323356eb.testnet",
+      "hash": "EHa95wsYWeXEu9ngWxtLocKvTPSeG2NZURUQjQwn52uH",
+      "actions": [
+        "AddKey"
+      ]
+    },
+    {
+      "account": "boreal.last-light-323356eb.testnet",
+      "receiver": "boreal.last-light-323356eb.testnet",
+      "hash": "5WQmMkv4MzbjLA8MsdrdCiW3H6UuGA1yH8d2Ea1ugv9i",
+      "actions": [
+        "AddKey"
+      ]
+    }
+  ],
+  "roundSummary": [
+    {
+      "round": 1,
+      "oxygen": 3,
+      "medicine": 1
+    },
+    {
+      "round": 2,
+      "oxygen": 2,
+      "medicine": 1
+    },
+    {
+      "round": 3,
+      "oxygen": 4,
+      "medicine": 1
+    },
+    {
+      "round": 4,
+      "oxygen": 3,
+      "medicine": 1
+    },
+    {
+      "round": 5,
+      "oxygen": 2,
+      "medicine": 1
+    },
+    {
+      "round": 6,
+      "oxygen": 4,
+      "medicine": 0
+    },
+    {
+      "round": 7,
+      "oxygen": 3,
+      "medicine": 1
+    },
+    {
+      "round": 8,
+      "oxygen": 2,
+      "medicine": 1
+    },
+    {
+      "round": 9,
+      "oxygen": 4,
+      "medicine": 1
+    },
+    {
+      "round": 10,
+      "oxygen": 3,
+      "medicine": 2
+    },
+    {
+      "round": 11,
+      "oxygen": 2,
+      "medicine": 2
+    },
+    {
+      "round": 12,
+      "oxygen": 4,
+      "medicine": 1
+    },
+    {
+      "round": 13,
+      "oxygen": 3,
+      "medicine": 1
+    },
+    {
+      "round": 14,
+      "oxygen": 2,
+      "medicine": 1
+    },
+    {
+      "round": 15,
+      "oxygen": 4,
+      "medicine": 1
+    },
+    {
+      "round": 16,
+      "oxygen": 3,
+      "medicine": 2
+    },
+    {
+      "round": 17,
+      "oxygen": 2,
+      "medicine": 2
+    },
+    {
+      "round": 18,
+      "oxygen": 4,
+      "medicine": 1
+    },
+    {
+      "round": 19,
+      "oxygen": 3,
+      "medicine": 1
+    },
+    {
+      "round": 20,
+      "oxygen": 2,
+      "medicine": 1
+    }
+  ],
+  "scriptErrors": []
+}
