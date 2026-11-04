@@ -1,177 +1,115 @@
-# Last Light — economy FAQ
+# Last Light — how to play
 
-**Version 0.3.** Implemented testnet merchant market and separate NPC wallet; human enjoyment and strategic balance remain unproven. This file and the website FAQ are generated from `data/faq.json`.
+**Version 0.3.** Player guide for the hosted game. This file and the website FAQ are generated from `data/faq.json`.
 
 The current market rules live in [economy-v0.3.md](economy-v0.3.md); underlying colony rules and the original critical round sequence remain in [economy-v0.2.md](economy-v0.2.md).
 
-## Foundation
+## Start here
 
-### 1. Where does profit come from?
+### 1. How do I win?
 
-The colony pays merchants from a finite, pre-funded 180-credit treasury for accepted deliveries. Merchants buy finite depot stock; depot payments leave the treasury economy. No credits are minted mid-match. Purchases cannot exceed the treasury or the contract's procurement limits.
+Keep the colony alive through round 20, then finish with the highest score. You earn credits by delivering supplies or trading with other merchants. If the colony collapses, everyone loses—even the richest merchant.
 
-### 2. What replenishes goods?
+### 2. What should I do first?
 
-The depot releases 18 oxygen in scheduled batches, plus finite medicine and fuel. Each accepted plant-fuel sale immediately converts one fuel into two oxygen within that action, up to three fuel. The initial habitat stock is four. The 18-unit quota includes both purchased oxygen and oxygen from plant fuel; quota 20 is an untested variant, not the baseline.
+At the Depot, choose Load: buy 3 oxygen and add 2 tank fuel. This costs 8 credits. In the next round, Travel to the Habitat. Then choose Sell to deliver the oxygen. Travelling and selling are separate moves.
 
-### 3. Why sell now instead of waiting?
+### 3. Can I learn without a wallet or timer?
 
-Cargo holds at most three oxygen. Holding it blocks another run and a rival or NPC may deliver first and lower the price. A trip costs rounds and fuel. Waiting can earn a higher premium, so we must compare whole-match strategies; a cargo cap alone is not proof it is balanced.
+Yes. Choose Play solo. Suggested moves are on and the clock is off by default. Two computer-controlled merchants play alongside you. In solo options, turn off Suggested moves to choose your own route, or turn on 15-second rounds for a faster match.
 
-### 4. Can players prevent collapse?
+### 4. How long is a match?
 
-A complete twenty-round two-browser NEAR testnet match survived and matched the JS rules at every settlement. Public reports and the complete replay are committed in docs/evidence/. The Python witness is an additional feasibility schedule, not proof of balance or human playability.
+There are 20 rounds. Online, each round gives you 15 seconds to choose one move—about five minutes of decision time, plus time for online confirmations. Solo play has no timer unless you switch it on.
 
-### 5. What makes rescue financially sensible?
+### 5. Can I control both players?
 
-At habitat stock one, three oxygen pay 7 + 6 + 5 = 18. Goods cost 6 and two travel fuel cost 2: a 10-credit trip margin before time and rival risk. Selling earlier pays less but frees capacity sooner. Measure total profit across matches, not one trip.
+Choose Play both sides. You control merchants A and B in one browser. Save a move for each, then choose Finish round. You can change either move before finishing. Tess, the computer-controlled third merchant, still chooses her own moves.
 
-### 6. What can a trailing player accomplish?
+## Play with a friend
 
-They can target public depot releases, medicine deadlines, or fuel-powered oxygen production. Equal cargo limits constrain runaway scale. A hopeless player may still prefer collapse; we have not solved that incentive. Test it before adding cosmetic survival progression.
+### 6. How do we start an online match?
 
-## Prices & orders
+Both players need different NEAR testnet wallets with test NEAR. Choose Play online and connect. One player chooses Create match and shares the invite or match code. The other chooses Join match. Enable fast actions, then choose Ready to play in both browsers. Tess joins automatically.
 
-### 7. What exactly moves prices?
+### 7. Do I need real money?
 
-Oxygen price follows habitat stock immediately before each accepted unit: stock 4 or above pays 4; 3 pays 5; 2 pays 6; 1 pays 7; 0 in the critical rescue round pays 8. Medicine pays 5 at clinic stock one or 8 at stock zero. The last trade price and trading volume do not set quotes.
+Solo play and Play both sides need no wallet. Online play uses free test NEAR, not purchased mainnet NEAR. Creating a match costs 0.5 test NEAR for storage, which is not refunded, plus network fees. Joining and making moves use network fees. Game credits have no cash value. Use Get test NEAR on the online-play screen.
 
-### 8. Does buying stock raise the price?
+### 8. What are fast actions?
 
-No. Buying depot inventory does not change colony stock or payout. Only consumption, accepted deliveries and plant production change colony oxygen inventory.
+Fast actions let this browser send game moves without a wallet popup for every turn. You approve a key limited to four game actions on Last Light, with up to 0.25 test NEAR for network fees. It cannot transfer your NEAR. Choose Disable fast actions to remove it. Clearing browser data alone does not remove that permission.
 
-### 9. Are purchase and sale prices different?
+### 9. Does the host need to keep their computer on?
 
-Yes. Oxygen costs 2 at the depot and pays 4–8 at the colony. The merchant must still spend two fuel and several rounds on a round trip. The colony does not resell its emergency reserves to merchants in v0.2.
+The website and Tess run on hosted services. The person who shares the link does not need to keep their computer on. During a match, keep your game tabs open. If both players leave, the round waits until someone returns to finish it.
 
-### 10. Can a small purchase inflate an existing stockpile?
+### 10. What if I disconnect or miss the timer?
 
-No. Depot purchases cannot move colony prices. A player can withhold oxygen until real consumption raises urgency, but is capped at three oxygen and risks pre-emption or shared collapse.
+Reconnect with the same wallet and match code. Completed trades stay recorded. A saved move can still finish while you are away. If you did not save a move before the timer ended, your merchant waits that round. The colony still uses supplies when the round finishes.
 
-### 11. Can players wash-trade to manufacture demand or rewards?
+## Choose your move
 
-No volume rewards exist. Only actual scheduled consumption drives demand; transferring goods among merchants cannot trigger a treasury payout. Direct player trades are out of the first prototype.
+### 11. What does each action do?
 
-### 12. Are emergency prices capped?
+Load buys cargo and tank fuel at the Depot. Travel moves your rover to another building. Sell delivers cargo at your destination. Market offers cargo to another merchant or buys their offer. Wait keeps your rover in place. Each uses one round; loading or buying can include a tank refill.
 
-Oxygen tops out at 8 per unit and medicine at 8. Preview maximum fillable quantity and estimated total. Oxygen and medicine can partially fill only if the accepted total meets the declared minimum; otherwise the whole action rejects.
+### 12. What does “Move saved” mean?
 
-### 13. Can the colony afford emergency purchases?
+Your move is recorded for this round, but the trade has not happened yet. You can update it before the timer ends. At the end of the round, the game checks all moves in turn. Read Round complete or Move not completed to see the result.
 
-The baseline treasury starts at 180 credits, while the conservative ceiling on legal payouts is 168: treasury exhaustion is not a baseline strategic threat. Quota 20 raises this ceiling to 184, requiring a larger treasury. Compare both quotas with equal funding too; no accepted trade goes unpaid.
+### 13. How much can my rover carry?
 
-### 14. Does a large shipment get one quoted price?
+Cargo has 6 spaces. One oxygen uses 2 spaces; one medicine or cargo fuel uses 1. That means a full oxygen load is 3 units. Your separate fuel tank holds 2 fuel and does not use cargo space.
 
-Each accepted unit reprices as it replenishes stock. Three oxygen at stock one pay 7, then 6, then 5. Oxygen and medicine may partially fill up to cargo, storage and quota/cap if the total meets the minimum; surplus stays with the merchant. Plant fuel is all-or-nothing and capped cumulatively at three per match.
+### 14. How do routes and tank fuel work?
 
-### 15. Can two players both expect the same quote?
+Each trip uses one round and 1 tank fuel. Leave the Depot with 2 tank fuel: one for the trip out and one for the return. Trips between the Habitat and Clinic go through the Depot. Refill your tank there. Your rover arrives when the round ends; choose Sell in a later round to deliver.
 
-Included orders are public. Priority rotates within three-round blocks and shifts at each block, giving oxygen-shipment first seats A, B, NPC, A, B, NPC. Later sales see changed inventory and price. Partial sales require the merchant's minimum total payout. Orders name match_id and round_id; late inclusion rejects without rollover. Inclusion latency remains a fairness risk.
+### 15. How do I trade with another merchant?
 
-## Goods & transport
+Both rovers must be at the Depot. Choose Market, select cargo and set a price per unit, then Post offer. Buyers can choose Buy lot from the next round. The whole displayed lot trades at once. If the offer changes before the purchase is processed, nothing moves. Changing or cancelling an offer uses a move. Leaving the Depot withdraws it.
 
-### 16. Why carry fuel or medicine instead of oxygen?
+### 16. Why did my payout change or my move fail?
 
-Fuel powers trips or the oxygen plant, changing future oxygen scarcity and profits. Medicine covers clinic deadlines at rounds 6, 12 and 18 and is limited by clinic storage. If neither creates a credible winning strategy in tests, the design fails.
+The preview is an estimate. Other merchants may buy the last stock, deliver first, or fill a building’s storage. The move order is shown on the board and rotates each round. Oxygen and medicine sales can accept fewer units than requested. Set Minimum payout to the lowest total credits you will accept; if the offer falls below it, you keep all your cargo.
 
-### 17. Can one resource substitute for another?
+## Keep the colony alive
 
-Only fuel: one plant fuel immediately becomes two habitat oxygen when that sale resolves, at most three times per match. Stock, quota and treasury change atomically before the next merchant acts. Medicine cannot substitute for oxygen or fuel.
+### 17. What happens when oxygen runs out?
 
-### 18. What does movement cost and can merchants get stranded?
+The Habitat uses 1 oxygen at the end of each round. When stock reaches zero, you get one final rescue round. Sell oxygen at the Habitat, or sell cargo fuel to its plant, before that round ends. Travelling there alone does not deliver anything. If no oxygen arrives in time, everyone loses.
 
-Each graph leg (depot–habitat or depot–clinic; no habitat–clinic direct route) costs one action and one tank fuel. Each decision window lasts 15 seconds, but settlement delay can lengthen the match. Loading may refill the tank up to two from finite depot fuel. Return-fuel checks block infeasible trips. Arrival never sells automatically.
+### 18. When does the Clinic need medicine?
 
-### 19. Is cargo measured by units or volume?
+The Clinic uses 1 medicine at the end of rounds 6, 12 and 18. A missed dose costs 1 health. It starts with 2 health; reaching zero ends the match. Later medicine prevents another missed dose but does not restore health. The Clinic stores up to 2 medicine and buys at most 3 delivered medicine per match.
 
-Volume six: oxygen uses two, medicine and saleable fuel one. Vehicle tank fuel is separate. A merchant can hold at most three oxygen, even if other cargo slots are empty.
+### 19. What is the oxygen plant for?
 
-### 20. Do goods expire?
+The plant is part of the Habitat. Sell cargo fuel there to make oxygen: 1 fuel makes 2 oxygen and pays 4 credits. It can use only 3 fuel during the whole match. All the oxygen must fit in storage and the remaining delivery allowance. Tank fuel cannot be sold.
 
-No spoilage in v0.2. The economy already has urgency from consumption, deadlines, capacity and rivals; we will not add a hidden penalty before testing those.
+### 20. When do new supplies arrive?
 
-### 21. Are future shipments visible?
+The Depot gets 3 oxygen at the start of rounds 1, 4, 7, 10, 13 and 16. Its 4 medicine and 24 fuel must last the whole match. The Habitat stores up to 7 oxygen. The colony accepts up to 18 extra oxygen per match, counting both delivered oxygen and oxygen made by the plant.
 
-Yes. Depot arrivals, medicine deadlines and included plaintext orders are public. Players can react to visible included orders, though network visibility/inclusion latency can differ. The interface does not promise hidden choices. True secret simultaneous orders would require a separate mechanism such as commit–reveal.
+### 21. What must remain at the end?
 
-### 22. Can a district recover after running out?
+After round 20 uses its supplies, the Habitat needs at least 2 oxygen, the Clinic needs at least 1 medicine, and clinic health must be above zero. If any requirement is missed, everyone loses. The colony’s remaining credits are its budget for buying deliveries, not your score.
 
-Oxygen at zero after consumption starts one CRITICAL rescue round; failure to deliver or produce oxygen before the next consumption collapses the colony. A missed medicine deadline costs one clinic health; a later dose prevents another miss but does not restore health. Two misses collapse the clinic.
+## Scores and saved games
 
-## Competition & NPC
+### 22. How is my score calculated?
 
-### 23. What prevents the leader buying all oxygen?
+Your score is final credits plus the value of unsold cargo, minus your starting 25 credits. Each unsold oxygen or medicine is worth 1 credit. Every pair of cargo fuel is worth 1 credit; tank fuel is worth nothing. Highest score wins if the colony survives. Equal highest scores share the win.
 
-A merchant can hold no more than three oxygen, and future depot stock is released on a public schedule. This limits one person's corner, but two humans can still coordinate to withhold supply and cause a shared loss. That risk requires playtesting.
+### 23. Who is Tess?
 
-### 24. Can players trade directly or enforce delivery agreements?
+Tess is a computer-controlled merchant who follows trading rules. She buys supplies, considers profitable cargo offers and makes deliveries. She has the same cargo and travel limits as you. Online, she signs moves with her own testnet wallet. If her move does not arrive before the timer ends, she waits.
 
-Not in the baseline. Optional depot offers lock one whole lot. A buyer accepts a previously included offer by exact ID, version, quantity and price; replacement invalidates stale acceptance. Any refill uses the same finite depot fuel and all cargo types count against buyer capacity. Leaving cancels an offer. A round-5 rescue and competing-order rejection still need action-level witnesses.
+### 24. Is my cargo secret?
 
-### 25. Can a player deliberately create a shortage for the rescue premium?
+The board hides rival cargo, but online match data and saved moves are public on NEAR. Match history and downloaded replays may also reveal cargo and actions. Plan around limited information on the board; do not rely on secrecy.
 
-They can withhold their own cargo. They cannot drain colony stock by purchasing it, fabricate demand through wash trades, or claim an uncapped premium. Whether strategic hoarding becomes dominant remains unproven.
+### 25. Does my match save?
 
-### 26. What does the NPC optimize?
-
-Tess follows a deterministic stock and demand policy. She may buy merchant lots when projected resale less price and travel leaves at least two credits of margin, post her own asks when supplies are stable, or deliver unsold cargo. She uses her own NEAR wallet through a hosted restricted signer. Read game/market.js and docs/economy-v0.3.md for exact rules. She is not an LLM agent.
-
-### 27. Does the NPC have the same information and action limits?
-
-Tess uses the same cargo, fuel, trade, storage and priority rules as humans. The hosted runner reads public state and included orders and signs her move before cutoff. Her first included order is fixed; if none arrives she waits. The contract does not synthesize a policy decision during settlement.
-
-### 28. Can the NPC go bankrupt?
-
-Yes. It starts with 25 credits like each human and receives no replacement credits or goods. It cannot buy when it cannot pay.
-
-### 29. Will the NPC always rescue or outcompete humans?
-
-A single NPC doing only oxygen runs can sell at most 15 oxygen on rounds 3, 7, 11, 15 and 19, below the 18 extra oxygen needed for the required ending reserve. That does not prove it cannot sustain oxygen by using plant fuel, nor that humans will matter under full clinic rules. Compare identical seeded scenarios with and without the NPC; its survival-first rule may be a free rescue service or may steal opportunities.
-
-### 30. What if a human disconnects holding essential cargo?
-
-Their cargo remains theirs. The NPC may buy only unclaimed depot stock, not confiscate inventory. The colony can still collapse; reconnecting restores the onchain settled state.
-
-## Winning & ending
-
-### 31. Is the winner determined by cash, profit or total wealth?
-
-Only on survival: final credits plus fixed salvage of owned unsold cargo minus the common initial 25 credits. Outstanding offers cancel and unlock at terminal settlement, then balances and scores freeze. All lose on collapse.
-
-### 32. How is unsold inventory valued?
-
-Integer salvage equals one credit per unsold oxygen or medicine plus floor(unsold saleable fuel units / 2) credits. Tank fuel earns none. Listed goods remain seller-owned and count once when terminal offers cancel. Last trade price cannot change salvage.
-
-### 33. If inventory counts little, does the last minute become liquidation?
-
-Useful sales pay more than salvage, but take a round and can be pre-empted. The low salvage cushions a late rejection without making a pure sell-everything rush automatically optimal. We still need to test final-round behavior.
-
-### 34. Must the colony finish viable, not merely alive?
-
-Yes. At the end of round 20, habitat oxygen must be at least two, clinic medicine at least one, and clinic health at least one. The treasury cannot have unpaid accepted purchases. There is no arbitrary extra cash reserve because accepted purchases pay immediately.
-
-### 35. Can someone win with one early trade then do nothing?
-
-Possibly if rivals perform badly; we do not add activity points to forbid it. Ongoing deadlines and capped cargo should create further opportunities. Measure passive winners; fix the market if they are common.
-
-### 36. Can early profit create an irreversible lead?
-
-No guarantee against it. Cargo caps limit how much a rich merchant can hold, and scheduled shortages offer later trades. If seeded tests show a strong first-trade snowball, revise stock access or price curves rather than manipulate scoring.
-
-## Tests, not claims
-
-### 37. Does always buying oxygen beat balanced trading?
-
-Unknown. Compare identical starting conditions and opponent policies with early oxygen delivery versus withholding, and—using the implemented depot merchant market—merchant resale. Log when stock, quotes, owners, profit and survival diverge. Run round-by-round seeded simulations of oxygen-only, medicine-preparation, fuel-plant and mixed strategies, including movement, depot timing, competition and treasury. Report whole-match outcomes, not isolated margins.
-
-### 38. Can freeloaders profit while rescuers lose?
-
-Unknown. Measure contribution to survival and final profit separately, with and without the NPC. The rules must make rescue a plausible path to winning, not a forced subsidy to hoarders.
-
-### 39. What happens when both cooperate, both hoard or one sabotages?
-
-Unknown beyond possible shared collapse. Simulate cooperation, hoarding, sabotage, disconnects, simultaneous last-stock orders and NPC bankruptcy. Test missing or invalid actions, duplicate or delayed settlement and terminal rejection. Baseline treasury insolvency is excluded by its 168-credit payout ceiling below 180; test altered-budget variants separately.
-
-### 40. Do losses feel like a decision or like helplessness?
-
-Only players can answer. Observe plan changes, ask what move they would replay, and watch voluntary rematches. If losses feel imposed by timing or the NPC, this is not a winning game regardless of correct accounting.
+Solo and Play both sides save in this browser. Use Continue practice or Continue pass & play on the home screen. Clearing browser data removes those saves. Online matches are recorded on NEAR: reconnect with the same wallet and match code. Download a replay from Match history if you want a copy.

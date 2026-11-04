@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-05",
+  "timezone": "Africa/Lagos",
+  "passed": true,
+  "research": "../player-copy-research.md",
+  "publicBrowser": {
+    "passed": true,
+    "origin": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+    "checks": [
+      {
+        "viewport": [
+          1366,
+          768
+        ],
+        "landingWords": 105,
+        "guide": true,
+        "firstDelivery": true,
+        "correctiveErrors": true,
+        "onlineInstructions": true
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "landingWords": 104,
+        "guide": true,
+        "firstDelivery": true,
+        "correctiveErrors": true,
+        "onlineInstructions": true
+      },
+      {
+        "viewport": [
+          360,
+          800
+        ],
+        "landingWords": 104,
+        "guide": true,
+        "firstDelivery": true,
+        "correctiveErrors": true,
+        "onlineInstructions": true
+      }
+    ],
+    "scriptErrors": []
+  },
+  "faq": {
+    "singleSource": "data/faq.json",
+    "questions": 25,
+    "topics": 5,
+    "synchronized": true
+  },
+  "regressions": {
+    "unitTests": 41,
+    "fullSoloRounds": 20,
+    "fullPassAndPlayRounds": 20,
+    "pythonReleaseGate": true,
+    "marketControls": true
+  },
+  "gameRulesChanged": false,
+  "publicAssetHashesVerified": [
+    "client/app.js",
+    "client/player-copy.js",
+    "client/guide.js",
+    "client/guide-data.js",
+    "client/near-ui.js"
+  ],
+  "clientBytes": 1037693,
+  "clientBudgetBytes": 1200000,
+  "humanUsabilityStudy": false
+}

@@ -3,11 +3,11 @@ const METHODS=['join_match','ready_match','submit_order','settle_round'];
 const SESSION_ALLOWANCE='250000000000000000000000'; // 0.25 test NEAR, contract methods only.
 export async function rpc(method,params,config=NEAR_CONFIG){
  const response=await fetch(config.rpcUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:crypto.randomUUID(),method,params}),signal:AbortSignal.timeout(35000)});
- if(!response.ok)throw Error('NEAR RPC unavailable ('+response.status+'). Your settled goods have not changed locally.');
+ if(!response.ok)throw Error('NEAR RPC unavailable ('+response.status+'). Reconnect to check the latest match state.');
  const data=await response.json();if(data.error){const detail=data.error.data?.cause?.info?.error_message||data.error.data||data.error.message||'NEAR request failed';throw Error(typeof detail==='string'?detail:JSON.stringify(detail));}return data.result;
 }
 export async function view(method,args={},config=NEAR_CONFIG){
- if(!config.contractId)throw Error('NEAR contract is not configured. Practice and local rooms are available.');
+ if(!config.contractId)throw Error('NEAR contract is not configured. Solo play is available.');
  const result=await rpc('query',{request_type:'call_function',finality:'final',account_id:config.contractId,method_name:method,args_base64:btoa(unescape(encodeURIComponent(JSON.stringify(args))))},config);
  return JSON.parse(new TextDecoder().decode(new Uint8Array(result.result)));
 }
@@ -27,7 +27,7 @@ export class NearGame {
  async enableSession(){
   if(!this.accountId)await this.connect();const key=this.sdk.KeyPair.fromRandom('ed25519');
   const action=this.sdk.actions.addKey(key.getPublicKey(),this.sdk.actions.functionCallAccessKey(this.config.contractId,METHODS,BigInt(SESSION_ALLOWANCE)));
-  const wallet=await this.connector.wallet();this.onStatus?.('Authorize the game key in your wallet. It can call four game methods and spend at most 0.25 test NEAR on gas.');
+  const wallet=await this.connector.wallet();this.onStatus?.('Approve fast actions in your wallet: four Last Light actions, with up to 0.25 test NEAR for network fees. No NEAR transfer permission.');
   const outcome=await wallet.signAndSendTransaction({signerId:this.accountId,receiverId:this.accountId,network:'testnet',actions:[action]});
   if(!outcome?.transaction?.hash)throw Error('Key authorization was not confirmed. Reconnect your wallet and try again.');
   await this.verify(outcome.transaction.hash,this.accountId);
@@ -42,7 +42,7 @@ export class NearGame {
  }
  async call(method,args={},deposit='0'){
   if(this.busy)throw Error('Wait for the current NEAR transaction to finish.');if(!this.accountId)await this.connect();
-  this.busy=true;this.onStatus?.('Awaiting signature and NEAR confirmation…');
+  this.busy=true;this.onStatus?.('Confirm in your wallet if asked. Waiting for the network…');
   try{
    sessionStorage.setItem('last-light-near-operation',JSON.stringify({method,args,contract:this.config.contractId,account:this.accountId}));
    let result;const session=this.session();
@@ -50,8 +50,8 @@ export class NearGame {
     result=await this.sdk.signGameCall({accountId:this.accountId,privateKey:session.privateKey,contractId:this.config.contractId,method,args,rpc:(method,params)=>rpc(method,params,this.config)});
    }else{const wallet=await this.connector.wallet();result=await wallet.signAndSendTransaction({signerId:this.accountId,receiverId:this.config.contractId,network:'testnet',actions:[{type:'FunctionCall',params:{methodName:method,args,gas:'30000000000000',deposit}}]});}
    const hash=result?.transaction?.hash;if(!hash)throw Error('Wallet redirected or confirmation is unavailable. Reopen NEAR play to recover the transaction.');
-   const confirmed=await this.verify(hash);this.record(method,args,hash);sessionStorage.removeItem('last-light-near-operation');this.onStatus?.('Confirmed.');return decodeResult(confirmed);
-  }catch(error){this.onStatus?.('Transaction not confirmed. Check the chain state before retrying.');throw error;}finally{this.busy=false;this.onBusy?.();}
+   const confirmed=await this.verify(hash);this.record(method,args,hash);sessionStorage.removeItem('last-light-near-operation');this.onStatus?.(method==='submit_order'?'Move saved. Result at the end of the round.':method==='settle_round'?'Round complete.':method==='join_match'?'Match joined.':method==='ready_match'?'You are ready.':'Action confirmed.');return decodeResult(confirmed);
+  }catch(error){this.onStatus?.('Not confirmed yet. Check Match history before trying again.');throw error;}finally{this.busy=false;this.onBusy?.();}
  }
  record(method,args,hash){this.txs.push({method,match_id:args.match_id||null,round:args.round||null,hash,account:this.accountId,contract:this.config.contractId,network:'testnet'});this.txs=this.txs.slice(-100);try{localStorage.setItem('last-light-near-txs',JSON.stringify(this.txs));}catch{}}
  async recoverRedirect(){const hashes=new URL(location.href).searchParams.get('transactionHashes');if(!hashes)return null;const operation=JSON.parse(sessionStorage.getItem('last-light-near-operation')||'null');if(!operation||operation.contract!==this.config.contractId||operation.account!==this.accountId)throw Error('Connect the wallet that signed the pending transaction to recover it.');const hash=hashes.split(',')[0],result=await this.verify(hash);const action=result.transaction.actions?.find(a=>a.FunctionCall)?.FunctionCall;if(action?.method_name!==operation.method)throw Error('Returned transaction does not match the pending game action.');this.record(operation.method,operation.args,hash);sessionStorage.removeItem('last-light-near-operation');const url=new URL(location.href);url.searchParams.delete('transactionHashes');history.replaceState(null,'',url);return {method:operation.method,value:decodeResult(result),matchId:operation.args.match_id};}

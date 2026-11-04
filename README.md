@@ -8,11 +8,13 @@ A twenty-round trading strategy game: finish richest while keeping a space colon
 
 ## Try it
 
-**Without a wallet:** choose **Play now** for guided practice. Load oxygen and tank fuel, travel to the habitat, then sell in a separate round. Watch cargo, credits and colony oxygen change. Choose **Play both sides** to control both human merchants yourself.
+**Without a wallet:** choose **Play solo**. Suggested moves are on and the timer is off by default. Load oxygen and tank fuel, travel to the habitat, then sell in a separate round. Watch cargo, credits and colony oxygen change. Choose **Play both sides** to control both human merchants yourself.
 
-**With two wallets:** choose **Play online**, connect a NEAR testnet wallet, and enable fast actions to avoid signing each move. Create a match, share the code with a second wallet, and ready both merchants. Each decision window lasts fifteen seconds; orders can be replaced before cutoff. Loading, offering, buying, travelling, selling and waiting are separate actions.
+**With two wallets:** choose **Play online**, connect a NEAR testnet wallet, and enable fast actions to avoid signing each move. Create a match, share the code with a second wallet, and choose Ready to play in both browsers. Each round gives you fifteen seconds to save or update a move. Loading, offering, buying, travelling, selling and waiting are separate actions.
 
 Creating a match attaches **0.5 test NEAR** for non-refundable storage, plus gas. Joining uses gas only. Fast actions authorize a restricted key with a **0.25 test NEAR gas allowance** for four game methods; it cannot transfer funds. Use the [NEAR faucet](https://docs.near.org/getting-started/faucet) for testnet funding. Practice needs no wallet. Credits and cargo are match-scoped game units with no cash value.
+
+Read the [player guide](docs/faq.md) for controls, online setup and common questions. The [copy research and audit](docs/player-copy-research.md) records the sources behind the onboarding rewrite.
 
 ## What works
 
