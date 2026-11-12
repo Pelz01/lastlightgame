@@ -20,7 +20,8 @@
     "verify:interaction": "node tests/live-interaction.mjs",
     "build:site": "npm run build && node scripts/build-hosted-worker.mjs",
     "prestart": "node scripts/build-wallet.mjs",
-    "predev": "node scripts/build-wallet.mjs"
+    "predev": "node scripts/build-wallet.mjs",
+    "build:vercel": "npm run build && node scripts/build-vercel.mjs"
   },
   "engines": {
     "node": ">=22.22.2"

@@ -1,0 +1,11 @@
+node_modules/
+contracts/
+qa/
+hosting/
+docs/
+design/assets/
+design/node_modules/
+.git/
+.env*
+data/rooms.json
+data/*.sqlite*

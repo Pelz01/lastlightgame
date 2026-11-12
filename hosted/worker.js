@@ -1,9 +1,13 @@
 import {createNpcAgent,D1NpcJobs} from './npc-agent.js';
 import {NEAR_CONFIG} from '../client/near-config.js';
 import {ASSETS} from './assets.generated.js';
+import {proxyNpcRequest} from './proxy-npc.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store'}});
 export default {async fetch(request,env,context){
  const url=new URL(request.url);
+ if(env.NPC_BACKEND_URL&&['/api/npc/tick','/api/npc/receipts'].includes(url.pathname)){
+  const task=proxyNpcRequest(request,{backendUrl:env.NPC_BACKEND_URL,token:env.NPC_BACKEND_TOKEN});context?.waitUntil(task.catch(()=>{}));return task;
+ }
  if(url.pathname==='/api/npc/receipts'){
   const id=url.searchParams.get('match_id');if(request.method!=='GET'||!/^[A-F0-9]{6}$/.test(id||''))return json({error:'Invalid request'},400);
   try{return json({account:env.NPC_ACCOUNT_ID,contract:NEAR_CONFIG.contractId,receipts:await new D1NpcJobs(env.DB).receipts(NEAR_CONFIG.contractId,id)});}catch{return json({error:'Receipts temporarily unavailable'},503);}

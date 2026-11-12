@@ -34,3 +34,7 @@ hosted/assets.generated.js
 hosting/worker-stage/
 *.sqlite
 *.sqlite-*
+
+.vercel/
+
+.vercel

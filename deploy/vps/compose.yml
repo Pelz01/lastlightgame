@@ -1,0 +1,42 @@
+services:
+  backend:
+    build: ../..
+    image: last-light-backend:${RELEASE_SHA:-local}
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:8796:4173"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 4173
+      BACKEND_ONLY: "true"
+      PUBLIC_ROOMS: "false"
+      NPC_SIGNING_ENABLED: ${NPC_SIGNING_ENABLED:-false}
+      NEAR_NPC_KEY_FILE: /run/secrets/npc-runner.json
+      NPC_PROXY_TOKEN_FILE: /run/secrets/proxy-token
+      NPC_JOB_STORE: /app/data/npc-jobs.sqlite
+      ROOM_STORE: /app/data/rooms.json
+      RELEASE_SHA: ${RELEASE_SHA:-local}
+    volumes:
+      - ${LAST_LIGHT_DATA_DIR:?required}:/app/data
+      - ${LAST_LIGHT_SECRETS_DIR:?required}/npc-runner.json:/run/secrets/npc-runner.json:ro
+      - ${LAST_LIGHT_SECRETS_DIR:?required}/proxy-token:/run/secrets/proxy-token:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
+    stop_grace_period: 30s
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4173/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: "3"}
