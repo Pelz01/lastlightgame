@@ -14,4 +14,4 @@ Use a desktop recording for desktop footage. Record the phone layout separately 
 
 The supplied screenshots show **solo practice**, not newly signed online moves. Label recorded chain evidence as the completed testnet match. For live online footage, use two of your own testnet wallets and the judge walkthrough; account setup and transaction approvals belong outside a short recording where possible. Never expose private keys, recovery phrases, service credentials or personal contact details.
 
-A video has not been recorded by this preparation step. The six screenshots in media/ are a ready alternative for the hosted-demo post. The builder reviews and publishes the X post; attach media rather than posting text alone.
+A video has not been recorded by this preparation step. The screenshot exports in Downloads are a ready alternative for the hosted-demo post. The builder reviews and publishes the X post; attach media rather than posting text alone.

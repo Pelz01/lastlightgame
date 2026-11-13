@@ -1,6 +1,7 @@
+import os from 'node:os';import path from 'node:path';
 // Capture actual hosted UI through solo controls only. No wallet or submission requests.
 import {chromium} from 'playwright';import fs from 'node:fs/promises';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
-const origin=process.env.LAST_LIGHT_TEST_ORIGIN||'https://last-light-site.vercel.app',directory='submission/screenshots';await fs.mkdir(directory,{recursive:true});
+const origin=process.env.LAST_LIGHT_TEST_ORIGIN||'https://last-light-site.vercel.app',directory=process.env.LAST_LIGHT_SCREENSHOT_DIR||path.join(os.homedir(),'Downloads','Last Light Screenshots');await fs.mkdir(directory,{recursive:true});
 const browser=await chromium.launch({channel:'msedge',headless:true});const errors=[],report={capturedAt:new Date().toISOString(),origin,device:'desktop',viewport:{width:1366,height:900},mode:'Real untimed solo practice; no blockchain transactions',files:[]};
 async function newPage(){const page=await browser.newPage({viewport:report.viewport,reducedMotion:'reduce'});page.on('pageerror',error=>errors.push(error.message));await page.goto(origin);await page.locator('.game-front').waitFor();await page.evaluate(()=>document.fonts.ready);return page;}
 async function start(page){await page.click('[data-do=practice]');if(await page.locator('[data-tutorial-continue]').isVisible())await page.locator('[data-tutorial-continue]').click();await page.locator('#confirm').waitFor();await page.evaluate(()=>document.fonts.ready);}

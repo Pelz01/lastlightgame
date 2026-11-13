@@ -40,3 +40,7 @@ hosting/worker-stage/
 submission/application*.json
 submission/last-light-seven-screenshots.zip
 
+
+# Submission screenshot exports stay in Downloads.
+submission/screenshots/*.png
+submission/media/*.png

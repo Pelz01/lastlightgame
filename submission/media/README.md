@@ -1,4 +1,6 @@
-# Demo images
+# Demo images — local exports
+
+The PNG files are stored in `Downloads/Last Light Screenshots/Earlier desktop and phone`, not in GitHub. The seven-image desktop story is in the parent Downloads folder.
 
 These are actual screenshots captured from the hosted game through its normal controls. Each device has its own complete load → travel → sell sequence. Desktop uses 1366 × 900; phone uses a real responsive 390 × 844 viewport, with a full-page capture where needed.
 
