@@ -4,7 +4,7 @@ A twenty-round trading strategy game: finish richest while keeping a space colon
 
 **[Play the game](https://last-light-site.vercel.app/)** · **[NEAR testnet contract](https://testnet.nearblocks.io/address/last-light-market-a2500d58.testnet)** · **[Judge walkthrough](docs/judge-demo.md)**
 
-![Last Light desktop gameplay: colony map, merchant rovers and the redesigned trading panel after an oxygen delivery](docs/images/gameplay.webp)
+![Last Light desktop gameplay: colony map, merchant rovers and the redesigned trading panel after an oxygen delivery](docs/images/gameplay-interface-v3.webp)
 
 Actual solo gameplay after a successful oxygen delivery. Online matches settle separately on NEAR testnet.
 
