@@ -17,7 +17,7 @@
 | Retained history | 42 reachable revisions scanned for NEAR private-key encodings and private-key headers; no findings. This is a scoped pattern check, not an exhaustive third-party secrets audit |
 | Demo images | Six current screenshots, captured separately on desktop and phone through the real solo controls; both routes ended with Delivery complete and 32 credits |
 
-The machine-readable snapshot is [verification.json](verification.json). The unit/runtime audit started at commit `da4092645d70f5117b9f726b88a7fd7e36e1317a`; the submission-preparation changes update documents, media and a screenshot-capture helper, not game rules or contract deployment.
+The machine-readable snapshot is [verification.json](verification.json). A final clean-archive reference gate also passed on prepared commit `278cb7dd1e17a84af0e498aaa545ce5117b9411f`, binding the updated judge walkthrough to its recorded hash. The unit/runtime audit started at commit `da4092645d70f5117b9f726b88a7fd7e36e1317a`; the submission-preparation changes update documents, media and a screenshot-capture helper, not game rules or contract deployment.
 
 ## Existing execution evidence
 

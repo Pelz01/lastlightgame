@@ -70,5 +70,56 @@
     "matches": 0,
     "limit": "Pattern scan, not an exhaustive external secret audit"
   },
-  "submissionActionsPerformed": []
+  "submissionActionsPerformed": [],
+  "preparedSourceCommit": "278cb7dd1e17a84af0e498aaa545ce5117b9411f",
+  "preparedSourceTree": "3d6129190485e28b1baf76667c26079b27d5b14b",
+  "preparedCleanReferenceGate": {
+    "passed": true,
+    "mode": "clean-git-archive",
+    "workingTreeClean": true,
+    "checks": {
+      "edge_tests": {
+        "last_line": "OK",
+        "passed": true
+      },
+      "faq_drift": {
+        "last_line": "FAQ synchronized: 24 questions; game, website and Markdown match source/version",
+        "passed": true
+      },
+      "judge_replay": {
+        "last_line": "}",
+        "passed": true
+      },
+      "replay_drift": {
+        "last_line": "replay asset synchronized",
+        "passed": true
+      },
+      "unit_tests": {
+        "last_line": "OK",
+        "passed": true
+      },
+      "witness": {
+        "last_line": "NOTE: no strategy competition, human playtests, or NEAR settlement tested",
+        "passed": true
+      }
+    },
+    "artifacts": {
+      "docs/economy-v0.2.md": {
+        "bytes": 18857,
+        "sha256": "552f1bbe51d487b38f5f2d1a823ddf595645288a18755f60b290813063155a9c"
+      },
+      "docs/judge-demo.md": {
+        "bytes": 5016,
+        "sha256": "4e93365cfd8df2bd6d5f72d7f5f7eed49a52e98af3fabe41364b869ad6e253f9"
+      },
+      "site/replay-data.js": {
+        "bytes": 5425,
+        "sha256": "070a36ceff64c00946f28b5025eed2280ceb4654ab244bc761051be75fa8d49d"
+      },
+      "site/replay.html": {
+        "bytes": 3292,
+        "sha256": "8b505f1a829e6893b7a088667e9f8ac93cc18113531f01d1dab28c30c15fcdb3"
+      }
+    }
+  }
 }
