@@ -2,7 +2,7 @@
 
 A twenty-round trading strategy game: finish richest while keeping a space colony alive. Two human merchants and one rule-based NPC compete for finite oxygen, medicine and fuel. If the colony collapses, everyone loses.
 
-**[Play the game](https://last-light-colony.faleyeoluwapelumi.chatgpt.site/)** · **[NEAR testnet contract](https://testnet.nearblocks.io/address/last-light-market-a2500d58.testnet)** · **[Judge walkthrough](docs/judge-demo.md)**
+**[Play the game](https://last-light-site.vercel.app/)** · **[NEAR testnet contract](https://testnet.nearblocks.io/address/last-light-market-a2500d58.testnet)** · **[Judge walkthrough](docs/judge-demo.md)**
 
 ![Last Light gameplay](docs/images/gameplay.webp)
 
@@ -42,7 +42,7 @@ npm start
 
 Open **http://127.0.0.1:4173/**. The start script builds the lazy wallet bundle. Practice, pass-and-play, NEAR play and same-network rooms are available. `HOST=127.0.0.1` restricts access to loopback; `PORT` changes the port. Local rooms persist to `data/rooms.json`; set `ROOM_STORE` to a persistent-volume path for a hosted Node service.
 
-The public Worker serves the lightweight client and Tess’s signing service. Practice runs in-browser; online ownership and settlement live on NEAR. D1 stores NPC job leases and public transaction hashes. Human wallet keys never enter the server. Local WebSocket room controls are omitted from the public build. For a local NPC runner, set `NEAR_NPC_KEY_FILE` to the external restricted-key file created by `node scripts/setup-npc-wallet.mjs`.
+Vercel serves the lightweight client and proxies Tess’s API to a dedicated VPS backend. Practice runs in-browser; online ownership and settlement live on NEAR testnet. The backend stores NPC leases and public transaction hashes in persistent SQLite. Tess’s restricted signing key stays on the VPS; human wallet keys never enter either server. The existing ChatGPT Sites address remains a mirror using the same backend. See [hybrid hosting](docs/hybrid-hosting.md) for deployment and recovery. Local WebSocket room controls are omitted from public builds. For a local NPC runner, set `NEAR_NPC_KEY_FILE` to the external restricted-key file created by `node scripts/setup-npc-wallet.mjs`.
 
 ## Build and test
 

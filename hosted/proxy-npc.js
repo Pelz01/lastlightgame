@@ -15,7 +15,8 @@ export async function proxyNpcRequest(request,{backendUrl,token}){
  try{
   const target=new URL(backendUrl);if(target.protocol!=='https:'||target.username||target.password||target.search||target.hash)throw Error('Invalid backend URL');
   target.pathname=target.pathname.replace(/\/$/,'')+input.pathname;if(receipts)target.searchParams.set('match_id',match);
-  const response=await fetch(target,{method:request.method,headers:{'Content-Type':'application/json','X-Last-Light-Token':token},...receipts?{}:{body:JSON.stringify({match_id:match})},redirect:'error',signal:AbortSignal.timeout(24000)});
+  const response=await fetch(target,{method:request.method,headers:{'Content-Type':'application/json','X-Last-Light-Token':token},...receipts?{}:{body:JSON.stringify({match_id:match})},redirect:'manual',signal:AbortSignal.timeout(24000)});
+  if(response.status>=300&&response.status<400)throw Error('Backend redirects are forbidden');
   if(!response.headers.get('Content-Type')?.includes('application/json'))throw Error('Invalid backend response');
   return new Response(response.body,{status:response.status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
  }catch{return json({error:'Tess is temporarily unavailable; a missing move becomes wait.'},502);}

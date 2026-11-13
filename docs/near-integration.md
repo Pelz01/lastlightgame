@@ -1,6 +1,6 @@
 # NEAR testnet integration
 
-Public game: [Last Light](https://last-light-colony.faleyeoluwapelumi.chatgpt.site). The contract is `last-light-market-a2500d58.testnet`. This deployment is testnet only. Credits, cargo and scores are match-scoped game units transferable between merchants only inside the same match; they are not fungible tokens or redeemable balances.
+Public game: [Last Light](https://last-light-site.vercel.app). The contract is `last-light-market-a2500d58.testnet`. This deployment is testnet only. Credits, cargo and scores are match-scoped game units transferable between merchants only inside the same match; they are not fungible tokens or redeemable balances.
 
 ## Play
 
@@ -78,8 +78,8 @@ The local suite passes 26 unit tests, twenty-round self-play, two-tab room settl
 
 ## Merchant market and NPC wallet — v0.3
 
-See [economy v0.3](economy-v0.3.md) for exact resale and NPC policy rules. `data/near-deployment.json` identifies the new contract and designated NPC. Run `node scripts/setup-npc-wallet.mjs` after deployment to fund the NPC child account and add a restricted `submit_order` key. All private credentials are written outside this repository. Set production `NPC_ACCOUNT_ID` and secret `NPC_PRIVATE_KEY` through the hosting runtime environment; never embed them in assets or the hosting manifest. A local Node preview can read the same restricted credential through `NEAR_NPC_KEY_FILE`.
+See [economy v0.3](economy-v0.3.md) for exact resale and NPC policy rules. `data/near-deployment.json` identifies the new contract and designated NPC. Run `node scripts/setup-npc-wallet.mjs` after deployment to fund the NPC child account and add a restricted `submit_order` key. All private credentials are written outside this repository. The VPS reads that restricted credential from a read-only secret file via `NEAR_NPC_KEY_FILE`. Vercel and the Sites mirror hold only a backend proxy credential, never Tess’s signing key. See [hybrid hosting](hybrid-hosting.md). A local Node preview can use the same file setting.
 
-Build with `npm run build:site`: `hosting/site/.openai/hosting.json` preserves the existing project identity, declares logical D1 binding `DB`, and omits the old static declaration. Drizzle SQL creates only the NPC lease/receipt table. Human ownership, cash, goods and round results stay on NEAR; D1 is not an alternative game authority.
+The legacy Sites mirror is built with `npm run build:site`: `hosting/site/.openai/hosting.json` preserves the existing project identity, declares logical D1 binding `DB`, and omits the old static declaration. Drizzle SQL created the former NPC lease/receipt table. Its 33 confirmed receipts were chain-verified and imported into VPS SQLite at cutover; D1 is retained as a historical backup and no longer signs moves. Human ownership, cash, goods and round results stay on NEAR.
 
 The current [merchant-economy evidence](evidence/merchant-economy/README.md) records match 000005, all twenty verified NPC signatures and recovery of the complete receipt history in two fresh browsers. Forty-one JS unit tests, 120 adversarial Rust/JS market settlements, the deployed-WASM match, public desktop/mobile controls and Worker lifecycle checks pass. The client is about 1.024 MB uncompressed. The tests caught and fixed Worker request-resource reuse, stale nonces on reconnect, laptop action placement and browser-local receipt gaps.
