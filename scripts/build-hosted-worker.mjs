@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';import fs from 'node:fs/promises';import path from 'node:path';import {build} from 'esbuild';
 const project=path.resolve('hosting/site'),stage=path.resolve('hosting/worker-stage'),root=process.cwd();
 const metadata=JSON.parse(await fs.readFile('hosting/deployment.json','utf8'));await fs.mkdir(path.join(stage,'dist/server'),{recursive:true});
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.svg':'image/svg+xml','.webp':'image/webp','.woff2':'font/woff2','.json':'application/json','.txt':'text/plain'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css','.svg':'image/svg+xml','.webp':'image/webp','.woff2':'font/woff2','.json':'application/json','.txt':'text/plain'};
 const assets={};for(const name of await fs.readdir('dist',{recursive:true})){const file=path.join('dist',name);if(!(await fs.stat(file)).isFile())continue;assets['/'+name.replaceAll('\\','/')]={type:types[path.extname(name)]||'application/octet-stream',data:(await fs.readFile(file)).toString('base64')};}
 const publicConfig=(await fs.readFile('client/near-config.js','utf8')).replace('"localRooms":true','"localRooms":false');assets['/client/near-config.js'].data=Buffer.from(publicConfig).toString('base64');
 const manifest=JSON.parse(Buffer.from(assets['/manifest.json'].data,'base64').toString());manifest.files['client/near-config.js']={bytes:Buffer.byteLength(publicConfig),sha256:createHash('sha256').update(publicConfig).digest('hex')};assets['/manifest.json'].data=Buffer.from(JSON.stringify(manifest,null,2)).toString('base64');

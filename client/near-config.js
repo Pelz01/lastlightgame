@@ -1,1 +1,1 @@
-export const NEAR_CONFIG={"network":"testnet","contractId":"last-light-market-a2500d58.testnet","rpcUrl":"https://test.rpc.fastnear.com","archiveRpcUrl":"https://archival-rpc.testnet.near.org","explorerUrl":"https://testnet.nearblocks.io","localRooms":true};
+export const NEAR_CONFIG={"network":"testnet","contractId":"last-light-market-a2500d58.testnet","rpcUrl":"https://test.rpc.fastnear.com","archiveRpcUrl":"https://archival-rpc.testnet.fastnear.com","explorerUrl":"https://testnet.nearblocks.io","localRooms":true};

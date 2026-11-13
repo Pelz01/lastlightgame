@@ -29,3 +29,11 @@ The landing page stays short. Detailed stock schedules, end reserves, cargo valu
 Browser checks follow the guide's actual three-round route and verify stock/cash changes, corrective previews, readable online setup, FAQ hosting guidance, laptop confirmation placement and phone overflow. Solo/pass-and-play checks cover a complete match. The FAQ generator checks synchronization. Existing rule tests verify that display changes do not alter the economy.
 
 These are implementation checks, not a human usability study. For the next human session, give no spoken tutorial: ask a new player to make one oxygen delivery, invite a friend and explain Move saved versus a completed trade. Record where they hesitate, whether they need help and whether the first delivery succeeds. Revise from those observations rather than claiming the copy is proven easy.
+
+## Visual handbook and first-play help — November 13, 2026
+
+The handbook now teaches a complete oxygen delivery with numbered instructions, real matching screenshots and an explanation of what changes after each move. Desktop and phone screenshots are captured separately and selected responsively; enlargement keeps the same device source. The map, goods, survival checks, trading and online invitation flow follow that first route. The FAQ remains a secondary reference.
+
+This follows the reviewable objectives and prescriptive next steps in [XAG 109](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109), and the nearby labels and expected outcomes in [XAG 114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114), rechecked for this revision. It does not establish human usability results.
+
+A short dialog appears before first play in a browser session. Continuing acknowledges it for that session; Don't show this again stores an opt-out across visits. Quick rules reopens the same teaching content without changing the player's draft, and can be used from the online lobby. Sound remains opt-in, remembers the choice and starts its Web Audio context from a user gesture. Hosted .mjs responses use a JavaScript MIME type.

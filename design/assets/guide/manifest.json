@@ -1,0 +1,50 @@
+{
+  "purpose": "Real solo-game screenshots; numbered controls match the visual field guide.",
+  "files": {
+    "guide-map-desktop.webp": {
+      "width": 1001,
+      "height": 341,
+      "bytes": 21436
+    },
+    "guide-load-desktop.webp": {
+      "width": 1280,
+      "height": 673,
+      "bytes": 51502
+    },
+    "guide-travel-desktop.webp": {
+      "width": 1280,
+      "height": 673,
+      "bytes": 49860
+    },
+    "guide-sell-desktop.webp": {
+      "width": 1280,
+      "height": 673,
+      "bytes": 52758
+    },
+    "guide-map-phone.webp": {
+      "width": 390,
+      "height": 365,
+      "bytes": 13868
+    },
+    "guide-load-phone.webp": {
+      "width": 390,
+      "height": 764,
+      "bytes": 21824
+    },
+    "guide-travel-phone.webp": {
+      "width": 390,
+      "height": 685,
+      "bytes": 17810
+    },
+    "guide-sell-phone.webp": {
+      "width": 390,
+      "height": 863,
+      "bytes": 22990
+    }
+  },
+  "firstDelivery": {
+    "round": "04",
+    "credits": "32\ncredits",
+    "receipt": "ROUND COMPLETE\n\nRound 3: Sell 3 oxygen. Delivery complete. · +15 credits"
+  }
+}

@@ -1,7 +1,8 @@
+import {acknowledgeIntro} from './browser-helpers.mjs';
 import {chromium} from 'playwright';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
 await fs.mkdir('qa',{recursive:true});const browser=await chromium.launch({channel:'msedge',headless:true});
 try{
- const page=await browser.newPage({viewport:{width:1366,height:768}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:4173');await page.click('[data-do=practice]');await page.locator('#confirm').waitFor();assert.equal(await page.locator('[data-ship]').count(),3);
+ const page=await browser.newPage({viewport:{width:1366,height:768}});const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:4173');await page.click('[data-do=practice]');await acknowledgeIntro(page);await page.locator('#confirm').waitFor();assert.equal(await page.locator('[data-ship]').count(),3);
  const start=await page.locator('[data-ship=A]').boundingBox();await page.click('#confirm');assert(await page.locator('.cargo-transfer').isVisible());assert((await page.locator('.round-event').innerText()).includes('Loaded 3 oxygen'));
  await page.click('#confirm');assert.equal(await page.locator('[data-ship=A]').getAttribute('data-moving'),'true');assert(await page.locator('[data-ship=A]').evaluate(e=>e.getAnimations()[0].effect.getKeyframes().length>=4),'Travel must follow road waypoints');const during=await page.locator('[data-ship=A]').boundingBox();assert(during.x<start.x+150,'Rover must visibly depart, not teleport immediately');
  // An unrelated terminal redraw must not cancel the flight.
