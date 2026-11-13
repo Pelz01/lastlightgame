@@ -29,6 +29,10 @@ Read the [player guide](docs/faq.md) for controls, online setup and common quest
 
 Tess evaluates district demand, available stock and resale margin. She can buy player offers, post her own asks and deliver unsold cargo herself. Her [policy](game/market.js) is deterministic; the hosted runner signs her decisions independently. A missing signed NPC order becomes wait. NEP-245 items and social login are not implemented. Human enjoyment and strategic balance remain unproven.
 
+## Hackathon project disclosure
+
+The author is also entering [Accord](https://github.com/Pelz01/accord), a purchase-order, invoice and supplier-payment application. These are independent projects: Last Light implements game rules, matches, inventory and a merchant economy; Accord handles business procurement, supplier settlement and refunds. This repository is the Last Light entry, not a second submission of Accord. Accord's README also names Last Light, as required by [NEAR HACKATHON rule Q-015](https://nearhackathon.com/HACKATHON.md).
+
 ## Run locally
 
 Requires **Node.js 24 LTS** (minimum 22.22.2) and npm:
