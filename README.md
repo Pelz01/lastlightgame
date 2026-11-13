@@ -16,6 +16,15 @@ Creating a match attaches **0.5 test NEAR** for non-refundable storage, plus gas
 
 Read the [player guide](docs/faq.md) for controls, online setup and common questions. The [copy research and audit](docs/player-copy-research.md) records the sources behind the onboarding rewrite.
 
+### A first delivery: do this, see this
+
+1. Choose **Play solo**, read the short introduction, then choose **Let’s play**. Suggested moves are on and the timer is off.
+2. At the Depot, load **3 oxygen** and add **2 tank fuel**. Choose **Buy & load**: credits fall from 25 to 17, cargo becomes 3 oxygen and the tank holds 2 fuel.
+3. Choose **Travel → Habitat**, then **Travel to Habitat**: the rover arrives with its cargo and 1 tank fuel. Arrival does not deliver supplies.
+4. Choose **Sell**, amount **3**, minimum payout **0**, then **Sell cargo**. Read **Delivery complete** in the result: accepted oxygen leaves the rover, credits increase and the Habitat's stock changes. **Match history** records the round.
+
+These are solo practice actions. The [judge walkthrough](docs/judge-demo.md) separately explains online wallet play and the verified testnet evidence. The [submission review package](submission/README.md) is a draft, not an application.
+
 ## What works
 
 - Finite treasury, scheduled shipments and prices responding to delivered stock.
@@ -52,7 +61,7 @@ Vercel serves the lightweight client and proxies Tess’s API to a dedicated VPS
 
 ```sh
 npm test                         # JS rules, rooms, identities and durability
-npm run build                    # enforces a 1.2 MB client budget
+npm run build                    # 1.2 MB core budget; optional guide images have a separate 300 KB limit
 ```
 
 Optional Python checks require Python 3.12 or later (`python3` on Linux):
@@ -84,7 +93,7 @@ The [NEAR integration guide](docs/near-integration.md) covers the Linux WASM san
 
 ## Evidence
 
-The current [merchant-economy evidence](docs/evidence/merchant-economy/README.md) covers a complete **20-round, two-browser testnet match** (`000005`), all twenty NPC signatures, full state parity, actual player-to-player transfer, and receipt recovery. The [evidence index](docs/evidence/README.md) also preserves v0.2 reports. QA wallet setup used a Playwright-injected signer; gameplay used real browser-held restricted keys and real testnet RPC. This is integration evidence, not a human playtest or balance study.
+The current [hosted-release evidence](docs/evidence/hybrid-hosting/README.md) covers a complete **20-round, two-browser testnet match** (`000008`), all twenty NPC signatures and exact orders, full state parity, merchant trading, and receipt recovery after a backend restart. Earlier [merchant-economy evidence](docs/evidence/merchant-economy/README.md) preserves match `000005`; the [evidence index](docs/evidence/README.md) also preserves v0.2 reports. QA wallet setup used a Playwright-injected signer; gameplay used real browser-held restricted keys and real testnet RPC. This is integration evidence, not a human playtest or balance study.
 
 ## Source map
 
@@ -102,6 +111,10 @@ The current [merchant-economy evidence](docs/evidence/merchant-economy/README.md
 ## Development history and boundaries
 
 Planning documents and Python economy experiments predate November 1, 2026. The browser game, game assets, multiplayer client and NEAR integration were implemented during the November hackathon development period. Historical planning records are labelled. `site/` contains the earlier concept/replay site, not the playable client.
+
+The public repository starts with a [README-only commit on November 4](https://github.com/Pelz01/lastlightgame/commit/d6fa15d001c6d7b254f4a4776baf5d3300dcc4de). The [implementation diff](https://github.com/Pelz01/lastlightgame/compare/d6fa15d001c6d7b254f4a4776baf5d3300dcc4de...main) exposes the retained game and NEAR work. Earlier planning/model work is disclosed as background, not a newly invented hackathon feature.
+
+Development used AI coding assistance. Raster art was generated for Last Light; numbered guide screenshots capture the actual application. Third-party components include HOT's NEAR Connect, the NEAR JS libraries, `near-api-js`, `ws`, `bs58`, `buffer`, Noble hashes, Rust `near-sdk` and Borsh. Build and test tools include esbuild, Playwright, Python, Sharp and Fontsource; Barlow Condensed keeps its own font license. Versions are recorded in the npm and Cargo lockfiles. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
 This is a **testnet release**. The deployment account retains upgrade authority; retained matches are capped at 100. Both players must consent before archiving a finished match. If everyone disconnects, the onchain round waits for settlement; rejoining can resume it. Local persistence supports one Node process, not a multi-instance room cluster. This release is not a mainnet security audit.
 

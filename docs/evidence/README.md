@@ -1,6 +1,6 @@
 # Verification evidence
 
-Current v0.3 merchant-market and separate-NPC-wallet results are in [merchant-economy/](merchant-economy/README.md). They include the twenty-round testnet match, wallet signature proof and receipt-recovery checks.
+Current Vercel/VPS release results are in [hybrid-hosting/](hybrid-hosting/README.md): twenty-round testnet match `000008`, exact NPC signature/order proofs, receipt recovery after a backend restart, and desktop/phone onboarding checks. Earlier v0.3 merchant-market results remain in [merchant-economy/](merchant-economy/README.md).
 
 ## Historical v0.2 baseline
 

@@ -1,0 +1,5 @@
+Built Last Light at NEAR HACKATHON: trade supplies and keep a colony alive for 20 rounds. Online trades use NEAR testnet; Tess signs her own moves.
+Play: https://last-light-site.vercel.app
+Code: https://github.com/Pelz01/lastlightgame
+Solo shown.
+@NEARProtocol #NEARHackathon

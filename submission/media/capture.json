@@ -1,0 +1,69 @@
+{
+  "capturedAt": "2026-11-13T11:20:53.859Z",
+  "origin": "https://last-light-site.vercel.app",
+  "mode": "untimed solo practice; no blockchain transactions",
+  "files": [
+    {
+      "file": "desktop-load.png",
+      "device": "desktop",
+      "width": 1366,
+      "height": 900,
+      "bytes": 375749,
+      "sha256": "a47ab94db7410bf31e217e7e10b72f90cfc7e47b86dd1690329134121e36b8aa"
+    },
+    {
+      "file": "desktop-travel.png",
+      "device": "desktop",
+      "width": 1366,
+      "height": 900,
+      "bytes": 374053,
+      "sha256": "4ed135df1ad3cf796d1b132c04fc427471f27e6585a15be0124e2203863ef1f4"
+    },
+    {
+      "file": "desktop-delivery.png",
+      "device": "desktop",
+      "width": 1366,
+      "height": 900,
+      "bytes": 365519,
+      "sha256": "b1d9217c934dc560b702a7c8309c565c588020667e30970e05476f8093406f57"
+    },
+    {
+      "file": "phone-load.png",
+      "device": "phone",
+      "width": 390,
+      "height": 844,
+      "bytes": 208245,
+      "sha256": "a39ec24ef07036bae489aaad8c66e1d20bf44162e2f5eee37e226f57c8a82099"
+    },
+    {
+      "file": "phone-travel.png",
+      "device": "phone",
+      "width": 390,
+      "height": 844,
+      "bytes": 195545,
+      "sha256": "16242dc3db065fdb9a2a385199a1876f2274542a08124982cfdac70ec18d2eca"
+    },
+    {
+      "file": "phone-delivery.png",
+      "device": "phone",
+      "width": 390,
+      "height": 844,
+      "bytes": 197152,
+      "sha256": "6cadaa7a16e3337a62ee044365c00b832ac031e5dc4060d637e185f0bcfdee09"
+    }
+  ],
+  "checks": [
+    {
+      "device": "desktop",
+      "credits": "32\ncredits",
+      "receipt": "ROUND COMPLETE\n\nRound 3: Sell 3 oxygen. Delivery complete. · +15 credits",
+      "scriptErrors": []
+    },
+    {
+      "device": "phone",
+      "credits": "32\ncredits",
+      "receipt": "ROUND COMPLETE\n\nRound 3: Sell 3 oxygen. Delivery complete. · +15 credits",
+      "scriptErrors": []
+    }
+  ]
+}

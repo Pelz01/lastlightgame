@@ -2,6 +2,7 @@ node_modules/
 contracts/
 qa/
 hosting/
+submission/
 docs/
 design/assets/
 design/node_modules/

@@ -36,4 +36,6 @@ hosting/worker-stage/
 *.sqlite-*
 
 .vercel/
+.submission-private/
+submission/application*.json
 

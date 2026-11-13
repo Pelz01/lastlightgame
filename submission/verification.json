@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-11-13T11:16:14.910Z",
+  "origins": [
+    {
+      "origin": "https://last-light-site.vercel.app",
+      "homeStatus": 200,
+      "receiptsStatus": 200,
+      "npcReceipts": 20
+    },
+    {
+      "origin": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+      "homeStatus": 200,
+      "receiptsStatus": 200,
+      "npcReceipts": 20
+    }
+  ],
+  "backend": {
+    "ok": true,
+    "settlement": "near-testnet",
+    "npcReady": true,
+    "localRooms": false,
+    "release": "bbe013257ea2106588bf72e84fa0c7e0eda82e7f"
+  },
+  "contract": {
+    "create_deposit": "500000000000000000000000",
+    "credits": "match-scoped game units; transfers stay inside the match",
+    "max_matches": 100,
+    "network": "testnet",
+    "npc_wallet": "tess.last-light-market-a2500d58.testnet",
+    "round_ms": 15000,
+    "rules_version": 2,
+    "version": "0.3.0"
+  },
+  "deployedWasmSha256": "83de20aac14a81e9470ab1a3271b33f227dbf011b60532e57cf36d093fd22ba2",
+  "npcKeyPermission": {
+    "FunctionCall": {
+      "allowance": "470067365173092300000000",
+      "method_names": [
+        "submit_order"
+      ],
+      "receiver_id": "last-light-market-a2500d58.testnet"
+    }
+  },
+  "existingProofHashesMatchLiveReceipts": 20,
+  "publicRepository": "https://github.com/Pelz01/lastlightgame",
+  "publicRepositoryVerified": true,
+  "builderConfirmedNotSubmitted": true,
+  "auditSourceCommit": "da4092645d70f5117b9f726b88a7fd7e36e1317a",
+  "jsUnitTests": {
+    "passed": 43,
+    "failed": 0
+  },
+  "build": {
+    "passed": true,
+    "coreBytes": 1068949,
+    "optionalGuideArtworkBytes": 252048
+  },
+  "historicalModelGate": {
+    "passed": true,
+    "mode": "clean-git-archive",
+    "checks": 6
+  },
+  "historyPrivateKeyPatternScan": {
+    "checkedAt": "2026-11-13T11:18:45.323Z",
+    "revisions": 42,
+    "checks": [
+      "NEAR private-key encoding pattern",
+      "PEM/OpenSSH/EC private-key headers"
+    ],
+    "matches": 0,
+    "limit": "Pattern scan, not an exhaustive external secret audit"
+  },
+  "submissionActionsPerformed": []
+}
