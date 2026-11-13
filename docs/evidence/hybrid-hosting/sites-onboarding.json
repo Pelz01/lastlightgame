@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "origin": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+  "checks": [
+    {
+      "width": 1366,
+      "introBeforeGame": true,
+      "optOutSurvivesNewBrowserContext": true,
+      "realAudioWaveformPeak": 0.08795107901096344,
+      "muteWorks": true,
+      "quickRulesPreserveDraft": true,
+      "soundTogglePreservesInvalidInput": true
+    },
+    {
+      "width": 360,
+      "introBeforeGame": true,
+      "optOutSurvivesNewBrowserContext": true,
+      "realAudioWaveformPeak": 0.08795107901096344,
+      "muteWorks": true,
+      "quickRulesPreserveDraft": true,
+      "soundTogglePreservesInvalidInput": true
+    }
+  ],
+  "cancelKeepsLanding": true,
+  "onlineLobbyQuickRules": true,
+  "acknowledgementSurvivesReload": true,
+  "scriptErrors": []
+}

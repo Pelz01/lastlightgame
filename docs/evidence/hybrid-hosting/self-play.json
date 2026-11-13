@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "origin": "https://last-light-site.vercel.app",
+  "localSelfPlayRounds": 20,
+  "bothOrdersRequired": true,
+  "pendingMovesSurviveReload": true,
+  "replayExport": true,
+  "localRoomChecks": "not requested",
+  "scriptErrors": []
+}

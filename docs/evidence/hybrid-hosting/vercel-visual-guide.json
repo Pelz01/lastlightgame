@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "origin": "https://last-light-site.vercel.app",
+  "checks": [
+    {
+      "width": 1366,
+      "device": "desktop",
+      "correctScreenshots": true,
+      "imagesLoadOnDemand": true,
+      "threeNumberedSteps": true,
+      "nextStepAndZoomWork": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 390,
+      "device": "phone",
+      "correctScreenshots": true,
+      "imagesLoadOnDemand": true,
+      "threeNumberedSteps": true,
+      "nextStepAndZoomWork": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 360,
+      "device": "phone",
+      "correctScreenshots": true,
+      "imagesLoadOnDemand": true,
+      "threeNumberedSteps": true,
+      "nextStepAndZoomWork": true,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "scriptErrors": []
+}

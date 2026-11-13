@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checkedAt": "2026-11-13T00:23:31.981Z",
+  "checks": [
+    {
+      "name": "https://last-light-site.vercel.app receipt history",
+      "status": 200,
+      "cacheControl": "no-store",
+      "receipts": 20
+    },
+    {
+      "name": "https://last-light-site.vercel.app completed match",
+      "status": 200,
+      "cacheControl": "no-store"
+    },
+    {
+      "name": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site receipt history",
+      "status": 200,
+      "cacheControl": "no-store",
+      "receipts": 20
+    },
+    {
+      "name": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site completed match",
+      "status": 200,
+      "cacheControl": "no-store"
+    },
+    {
+      "name": "backend requires proxy credential",
+      "status": 401,
+      "cacheControl": "no-store"
+    },
+    {
+      "name": "caller cannot submit NPC order",
+      "status": 400,
+      "cacheControl": "no-store"
+    },
+    {
+      "name": "cross-origin writes rejected",
+      "status": 403,
+      "cacheControl": "no-store"
+    }
+  ]
+}

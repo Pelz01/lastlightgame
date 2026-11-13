@@ -1,0 +1,21 @@
+{
+  "network": "testnet",
+  "contract": "last-light-market-a2500d58.testnet",
+  "scope": "Only test-account function-call keys; full-access and production NPC keys retained",
+  "accounts": [
+    {
+      "id": "aurora.last-light-market-a2500d58.testnet",
+      "revoked": 6,
+      "hashes": [
+        "88MdXEw1AUPgmuB6BhMLd1JqXY4G2c6wpFwbBrkpdcfX"
+      ]
+    },
+    {
+      "id": "boreal.last-light-market-a2500d58.testnet",
+      "revoked": 6,
+      "hashes": [
+        "9bNYkoDqTCqP8WW7dXeAUWNPzkBB1gMirhbcCcsq6j3E"
+      ]
+    }
+  ]
+}

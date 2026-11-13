@@ -2,16 +2,16 @@
   "project_id": "appgprj_6aea441349bc81918907ee2a68465714",
   "url": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
   "access": "public",
-  "version_id": "appgprj_6aea441349bc81918907ee2a68465714~appgver_1a109a4cb9388191b11279dc9b492f00",
-  "deployment_id": "appgdep_6af655566b14819199208f7ca2389815",
-  "commit_sha": "8c0a35546c55a2fa70f74c882908127e7a41a5b8",
+  "version_id": "appgprj_6aea441349bc81918907ee2a68465714~appgver_b6b0e1b67d5c81919859e65dbc3f64e2",
+  "deployment_id": "appgdep_6af65f5e270081919218f05ba077a875",
+  "commit_sha": "49c9e882185a4a1ed0275d3c107dc23c78561d3e",
   "source_checkout": "hosting/site",
   "status": "succeeded",
   "runtime": "worker-esm",
   "d1": "DB",
-  "env_set_revision": 3,
-  "role": "frontend mirror; NPC requests pass through Vercel to the VPS",
+  "env_set_revision": 4,
+  "role": "frontend mirror; NPC requests proxy directly to the VPS",
   "backend": "https://lastlight-backend.51-195-137-246.sslip.io",
   "primary_frontend": "https://last-light-site.vercel.app",
-  "backend_proxy": "https://last-light-site.vercel.app"
+  "backend_proxy": "https://lastlight-backend.51-195-137-246.sslip.io"
 }

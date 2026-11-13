@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-11-13T00:57:56.050Z",
+  "frontend": "https://last-light-site.vercel.app",
+  "verifiedVercelDeployment": "dpl_Gxc2GYb1SW9CuaAXV6yxNKyCBFyj",
+  "verifiedFrontendSource": "35bf1ded1cba4b808597dd1548992f2eaec06817",
+  "backend": "https://lastlight-backend.51-195-137-246.sslip.io",
+  "backendImageSource": "bbe013257ea2106588bf72e84fa0c7e0eda82e7f",
+  "backendHealthy": true,
+  "npcReady": true,
+  "mirror": "https://last-light-colony.faleyeoluwapelumi.chatgpt.site",
+  "mirrorVersion": 13,
+  "mirrorSource": "49c9e882185a4a1ed0275d3c107dc23c78561d3e",
+  "mirrorDeployment": "appgdep_6af65f5e270081919218f05ba077a875",
+  "contract": "last-light-market-a2500d58.testnet",
+  "migrationVerifiedReceipts": 33,
+  "confirmedReceiptsSurvivingRestart": 70
+}
