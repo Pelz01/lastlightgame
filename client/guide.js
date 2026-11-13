@@ -2,7 +2,15 @@ import {icon} from './icons.js';
 import {faqQuestions,faqGroups} from './guide-data.js';
 import {guideImages} from './guide-images.js';
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-if(!document.querySelector('[data-guide-styles]')){const link=document.createElement('link');link.rel='stylesheet';link.href='/client/guide.css';link.dataset.guideStyles='true';document.head.append(link);}
+// Keep the loading screen until the manual can be laid out at the right width.
+export const guideReady=new Promise((resolve,reject)=>{
+ const existing=document.querySelector('[data-guide-styles]');
+ if(existing?.sheet){resolve();return;}
+ const link=existing||document.createElement('link');
+ link.addEventListener('load',resolve,{once:true});
+ link.addEventListener('error',()=>reject(Error('Could not load the field guide styles.')),{once:true});
+ if(!existing){link.rel='stylesheet';link.href='/client/guide.css';link.dataset.guideStyles='true';document.head.append(link);}
+});
 function picture(name,alt,caption){const desktop='guide-'+name+'-desktop.webp',phone='guide-'+name+'-phone.webp',d=guideImages[desktop],p=guideImages[phone];return `<figure class="guide-picture"><picture><source media="(max-width:760px)" srcset="/assets/${phone}" width="${p.width}" height="${p.height}"><img src="/assets/${desktop}" alt="${escape(alt)}" width="${d.width}" height="${d.height}" loading="lazy" decoding="async"></picture><figcaption><span>${caption}</span><button type="button" class="text-button" data-guide-zoom>Enlarge image ↗</button></figcaption></figure>`;}
 const instructions=rows=>`<div class="guide-instructions" role="list">${rows.map((row,i)=>`<div role="listitem"><span>${i+1}</span><p>${row}</p></div>`).join('')}</div>`;
 const heading=(number,label,title,body)=>`<div class="chapter-heading"><span>${number}</span><div><p class="eyebrow">${label}</p><h2>${title}</h2><p>${body}</p></div></div>`;

@@ -66,7 +66,7 @@ function renderLiveUpdate(sameRound,sameMatch){
   target?.focus({preventScroll:true});
  }
 }
-function renderGuide(){if(!guideRenderer){app.innerHTML=header()+'<main class=loading-screen><h1>Opening the field guide…</h1></main>';import('./guide.js').then(m=>{guideRenderer=m.fieldGuide;guideActions=m.handleGuideAction;if(view==='guide')render();}).catch(()=>notify('Could not load the field guide. Refresh to retry.'));return;}app.innerHTML=header()+guideRenderer();}
+function renderGuide(){if(!guideRenderer){app.innerHTML=header()+'<main class=loading-screen><h1>Opening the field guide…</h1></main>';import('./guide.js').then(async m=>{await m.guideReady;guideRenderer=m.fieldGuide;guideActions=m.handleGuideAction;if(view==='guide')render();}).catch(()=>notify('Could not load the field guide. Refresh to retry.'));return;}app.innerHTML=header()+guideRenderer();}
 function setNearStatus(text){nearStatus=errorCopy(text);for(const node of document.querySelectorAll('.near-status, #near-live-status'))node.textContent=nearStatus;if(view==='match'&&mode==='near')previewHTML();}
 function renderNearLobby(){app.innerHTML=header()+nearLobby({account:near?.accountId,session:!!near?.session(),status:nearStatus,invite:new URLSearchParams(location.search).get('near')||''});}
 function renderNearRoom(){app.innerHTML=header()+nearRoom({game,players,seat,room,account:near?.accountId,session:!!near?.session(),status:nearStatus});}
