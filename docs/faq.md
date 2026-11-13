@@ -26,7 +26,7 @@ There are 20 rounds. Online, each round gives you 15 seconds to choose one moveâ
 
 ### 5. How do we start an online match?
 
-Both players need different NEAR testnet wallets with test NEAR. Choose Play online and connect. One player chooses Create match and shares the invite or match code. The other chooses Join match. Enable fast actions, then choose Ready to play in both browsers. Tess joins automatically.
+Choose Play online. You and your friend each connect your own wallet, using free test NEAR for this playtest. One player chooses Create match and shares the invite or match code. The other chooses Join match. Enable fast actions, then choose Ready to play in both browsers. Tess joins automatically.
 
 ### 6. Do I need real money?
 
@@ -100,7 +100,7 @@ Your score is final credits plus the value of unsold cargo, minus your starting 
 
 ### 22. Who is Tess?
 
-Tess is a computer-controlled merchant who follows trading rules. She buys supplies, considers profitable cargo offers and makes deliveries. She has the same cargo and travel limits as you. Online, she signs moves with her own testnet wallet. If her move does not arrive before the timer ends, she waits.
+Tess is a computer-controlled merchant who follows trading rules. She buys supplies, considers profitable cargo offers and makes deliveries. She has the same cargo and travel limits as you. She makes her own moves each round. If she misses the timer, she waits.
 
 ### 23. Is my cargo secret?
 

@@ -31,7 +31,7 @@ window.lastLightFaq = {
       "id": 5,
       "group": "Play with a friend",
       "q": "How do we start an online match?",
-      "a": "Both players need different NEAR testnet wallets with test NEAR. Choose Play online and connect. One player chooses Create match and shares the invite or match code. The other chooses Join match. Enable fast actions, then choose Ready to play in both browsers. Tess joins automatically."
+      "a": "Choose Play online. You and your friend each connect your own wallet, using free test NEAR for this playtest. One player chooses Create match and shares the invite or match code. The other chooses Join match. Enable fast actions, then choose Ready to play in both browsers. Tess joins automatically."
     },
     {
       "id": 6,
@@ -133,7 +133,7 @@ window.lastLightFaq = {
       "id": 22,
       "group": "Scores and saved games",
       "q": "Who is Tess?",
-      "a": "Tess is a computer-controlled merchant who follows trading rules. She buys supplies, considers profitable cargo offers and makes deliveries. She has the same cargo and travel limits as you. Online, she signs moves with her own testnet wallet. If her move does not arrive before the timer ends, she waits."
+      "a": "Tess is a computer-controlled merchant who follows trading rules. She buys supplies, considers profitable cargo offers and makes deliveries. She has the same cargo and travel limits as you. She makes her own moves each round. If she misses the timer, she waits."
     },
     {
       "id": 23,
