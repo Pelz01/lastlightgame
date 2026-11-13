@@ -70,7 +70,7 @@ export class NearGame {
  }
  async rememberNpcReceipt(hash,round,account,matchId){
   if(account!==this.state?.npc_wallet||this.txs.some(tx=>tx.hash===hash))return;
-  const final=await rpc('tx',{tx_hash:hash,sender_account_id:account,wait_until:'FINAL'},this.config);const call=final.transaction?.actions?.[0]?.FunctionCall;
+  const final=await rpc('tx',{tx_hash:hash,sender_account_id:account,wait_until:'FINAL'},{...this.config,rpcUrl:this.config.archiveRpcUrl||this.config.rpcUrl});const call=final.transaction?.actions?.[0]?.FunctionCall;
   if(final.transaction?.signer_id!==account||final.transaction.receiver_id!==this.config.contractId||!('SuccessValue' in(final.status||{}))||call?.method_name!=='submit_order')return;
   const args=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(call.args),c=>c.charCodeAt(0))));if(args.match_id!==matchId||args.round!==round||this.txs.some(tx=>tx.hash===hash))return;
   this.txs.push({method:'submit_order',actor:'NPC',match_id:matchId,round,hash,account,contract:this.config.contractId,network:'testnet'});try{localStorage.setItem('last-light-near-txs',JSON.stringify(this.txs.slice(-100)));}catch{}

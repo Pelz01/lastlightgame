@@ -8,7 +8,7 @@ A twenty-round trading strategy game: finish richest while keeping a space colon
 
 ## Try it
 
-**Without a wallet:** choose **Play solo**. Suggested moves are on and the timer is off by default. Load oxygen and tank fuel, travel to the habitat, then sell in a separate round. Watch cargo, credits and colony oxygen change. Choose **Play both sides** to control both human merchants yourself.
+**Without a wallet:** choose **Play solo**. Suggested moves are on and the timer is off by default. Load oxygen and tank fuel, travel to the habitat, then sell in a separate round. Watch cargo, credits and colony oxygen change.
 
 **With two wallets:** choose **Play online**, connect a NEAR testnet wallet, and enable fast actions to avoid signing each move. Create a match, share the code with a second wallet, and choose Ready to play in both browsers. Each round gives you fifteen seconds to save or update a move. Loading, offering, buying, travelling, selling and waiting are separate actions.
 
