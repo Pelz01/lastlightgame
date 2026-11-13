@@ -1,6 +1,8 @@
 # Last Light design library
 
-**Current direction: ground colony + merchant rovers.** Start with [GROUND-V2.md](GROUND-V2.md), [the new asset gallery](runtime/ground-index.html), and [the original generation prompts](GROUND-PROMPTS.md). The orbital v1 material below is archived reference. All new masters are preserved in `assets/ground-v2/` and optimized files in `runtime/`.
+**Current interface: [Colony field instruments](INTERFACE-V3.md).** The live game uses Chakra Petch and IBM Plex Sans; the galleries below preserve the earlier design system.
+
+**Current artwork: ground colony + merchant rovers.** Start with [GROUND-V2.md](GROUND-V2.md), [the new asset gallery](runtime/ground-index.html), and [the original generation prompts](GROUND-PROMPTS.md). The orbital v1 material below is archived reference. All new masters are preserved in `assets/ground-v2/` and optimized files in `runtime/`.
 
 This directory preserves original masters and optimized runtime assets.
 

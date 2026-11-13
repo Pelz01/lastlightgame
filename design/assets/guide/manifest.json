@@ -2,44 +2,44 @@
   "purpose": "Real solo-game screenshots; numbered controls match the visual field guide.",
   "files": {
     "guide-map-desktop.webp": {
-      "width": 1001,
-      "height": 341,
-      "bytes": 21436
+      "width": 912,
+      "height": 477,
+      "bytes": 25750
     },
     "guide-load-desktop.webp": {
       "width": 1280,
-      "height": 673,
-      "bytes": 51502
+      "height": 885,
+      "bytes": 58874
     },
     "guide-travel-desktop.webp": {
       "width": 1280,
-      "height": 673,
-      "bytes": 49860
+      "height": 871,
+      "bytes": 57158
     },
     "guide-sell-desktop.webp": {
       "width": 1280,
-      "height": 673,
-      "bytes": 52758
+      "height": 871,
+      "bytes": 60998
     },
     "guide-map-phone.webp": {
-      "width": 390,
-      "height": 365,
-      "bytes": 13868
+      "width": 366,
+      "height": 310,
+      "bytes": 16154
     },
     "guide-load-phone.webp": {
-      "width": 390,
-      "height": 764,
-      "bytes": 21824
+      "width": 366,
+      "height": 891,
+      "bytes": 22404
     },
     "guide-travel-phone.webp": {
-      "width": 390,
-      "height": 685,
-      "bytes": 17810
+      "width": 366,
+      "height": 770,
+      "bytes": 18186
     },
     "guide-sell-phone.webp": {
-      "width": 390,
-      "height": 863,
-      "bytes": 22990
+      "width": 366,
+      "height": 961,
+      "bytes": 23118
     }
   },
   "firstDelivery": {
