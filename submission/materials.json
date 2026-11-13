@@ -17,5 +17,7 @@
   "demoPostDraft": "demo-post.txt",
   "personalFieldsIncluded": false,
   "requestIdCreated": false,
-  "applicationPayloadCreated": false
+  "applicationPayloadCreated": false,
+  "demoUrl": "https://x.com/pelz0x/status/2121350923779809382",
+  "demoPostStatus": "Builder confirmed posted on 2026-11-13; automated X fetch returned HTTP 403, so post text and attachments have not been independently verified."
 }

@@ -1,6 +1,6 @@
 # Submission readiness — November 13, 2026
 
-**Preparation complete; application not sent.** The builder confirmed “not submitted yet.” Required personal details, final choices and the public demo-post link are still outstanding.
+**Preparation complete; application not sent.** The builder confirmed “not submitted yet.” The builder supplied the published demo-post link. Required personal details and final choices are still outstanding.
 
 ## Checked now
 
@@ -30,7 +30,7 @@ The first-delivery, onboarding, audio, responsive guide and browser controls wer
 - Team lead name, contact email and team size.
 - Mainnet NEAR account to receive a prize, supplied by the builder. Do not use the game's testnet contract or invent an address.
 - Approval of the recommended `games` track, project description and demo assets.
-- A public X demo post, published by the builder with the required event tags and attached media; its URL is needed for the form.
+- Review the published demo post for the required event tags and attached media. The builder confirmed publication: [https://x.com/pelz0x/status/2121350923779809382](https://x.com/pelz0x/status/2121350923779809382). Automated retrieval returned HTTP 403, so the post contents and attachments have not been independently verified.
 - Contact consent and separate approval of the exact final application.
 
 Only after those details are reviewed should a private application payload and request ID be prepared. Before any later send, recheck the live rules, confirm the project is still unsubmitted, display the complete exact payload and wait for explicit approval. If an already-saved application needs a correction, use the organizer's change-request process rather than creating a duplicate.
