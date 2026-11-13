@@ -38,4 +38,5 @@ hosting/worker-stage/
 .vercel/
 .submission-private/
 submission/application*.json
+submission/last-light-seven-screenshots.zip
 

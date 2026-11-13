@@ -20,6 +20,7 @@ The track fit is concrete: players set cargo prices, credits and inventory move 
 | [Demo post](demo-post.txt) | X text for the builder to review and publish |
 | [Recording plan](recording-plan.md) | A focused 60–90 second demonstration |
 | [Media](media/README.md) | Separate actual desktop/phone screenshots, ready for review |
+| [Seven-image story](screenshots/README.md) | Desktop sequence: introduction, delivery, player-priced market, NPC purchase and survival |
 | [Public chain proof](chain-proof.md) | Read-only verification and twenty transaction links |
 | [Readiness](readiness.md) | Checks performed, evidence boundaries and missing decisions |
 | [Judge walkthrough](../docs/judge-demo.md) | Reproducible actions with expected results |

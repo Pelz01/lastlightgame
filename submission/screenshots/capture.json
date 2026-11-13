@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-11-13T13:56:05.255Z",
+  "origin": "https://last-light-site.vercel.app",
+  "device": "desktop",
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "mode": "Real untimed solo practice; no blockchain transactions",
+  "files": [
+    {
+      "file": "01-the-colony.png",
+      "caption": "Get rich. Keep the lights on. A colony trading game you can play solo or with a friend.",
+      "flow": "guided solo run",
+      "bytes": 1563429,
+      "sha256": "d2f7121f46b5eb238fbf618f742bdd5217c88376146ebe1b1940e55b456e0e3e",
+      "round": null
+    },
+    {
+      "file": "02-load-your-rover.png",
+      "caption": "Buy three oxygen and two tank fuel at the Depot. Check cargo space and the eight-credit cost.",
+      "flow": "guided solo run",
+      "bytes": 375749,
+      "sha256": "a47ab94db7410bf31e217e7e10b72f90cfc7e47b86dd1690329134121e36b8aa",
+      "round": "01"
+    },
+    {
+      "file": "03-arrive-at-the-habitat.png",
+      "caption": "Your rover arrives with its cargo and one tank fuel. Travelling and selling are separate moves.",
+      "flow": "guided solo run",
+      "bytes": 382442,
+      "sha256": "e6193ad481204f2c4b00a34e7749d0eb4bd3cf9378b477c79e00e25860a6ea62",
+      "round": "03"
+    },
+    {
+      "file": "04-make-the-delivery.png",
+      "caption": "Deliver oxygen, earn fifteen credits, and keep the Habitat supplied. The result records what happened.",
+      "flow": "guided solo run",
+      "bytes": 365519,
+      "sha256": "b1d9217c934dc560b702a7c8309c565c588020667e30970e05476f8093406f57",
+      "round": "04"
+    },
+    {
+      "file": "05-set-your-own-price.png",
+      "caption": "Offer your oxygen to another merchant: three units at three credits each. You choose the price.",
+      "flow": "separate solo market example",
+      "bytes": 364941,
+      "sha256": "2c5ebf8a601c99d11ec29313795de550c0ad812ea95901ba7c9525f6eb46113b",
+      "round": "03"
+    },
+    {
+      "file": "06-tess-buys-your-cargo.png",
+      "caption": "Tess buys the whole lot for nine credits. The trade history identifies the buyer, goods and payment.",
+      "flow": "separate solo market example",
+      "bytes": 362894,
+      "sha256": "b29953bc971cb68e85169253509417ac990cfb996d9447f4e45e8e30399e34bc",
+      "round": "04"
+    },
+    {
+      "file": "07-keep-the-lights-on.png",
+      "caption": "The colony survives all twenty rounds. Final credits and remaining cargo determine the winner.",
+      "flow": "guided solo run",
+      "bytes": 1275501,
+      "sha256": "732093044afe14bde634b6e607c1da1c65823f4c62b20dec7c3c9c33f9e89c18",
+      "round": null
+    }
+  ],
+  "completedRun": {
+    "rounds": 20,
+    "result": "survived",
+    "scores": "Merchant\tCredits\tCargo value\tScore\n Mara Vale · You · WINNER\t44\t0\t+19\n Ilan Rook\t40\t0\t+15\n Tess Calder · Computer\t39\t0\t+14"
+  },
+  "marketExample": {
+    "trade": "R3 · Mara Vale → Tess Calder · 3 oxygen · 9 cr",
+    "credits": "26\ncredits"
+  },
+  "scriptErrors": []
+}
